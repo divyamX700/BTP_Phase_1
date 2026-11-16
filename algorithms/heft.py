@@ -6,7 +6,7 @@ Low-Complexity Task Scheduling for Heterogeneous Computing."
 
 HEFT is a two-phase algorithm:
 
-PHASE 1 — RANKING (Upward Rank):
+PHASE 1 - RANKING (Upward Rank):
   For every task n, the upward rank is defined recursively as:
     rank_u(n) = avg_exec(n) + max over all successors s of:
                   (avg_comm(n, s) + rank_u(s))
@@ -17,7 +17,7 @@ PHASE 1 — RANKING (Upward Rank):
   task n all the way to the exit node. Tasks with high rank sit on the 
   longest path, so they must be scheduled first.
 
-PHASE 2 — PROCESSOR SELECTION (Insertion-based):
+PHASE 2 - PROCESSOR SELECTION (Insertion-based):
   Tasks are sorted in descending order of rank_u.
   For each task (in rank order), it is assigned to the machine that 
   gives the EARLIEST FINISH TIME (EFT), considering idle slot insertion.
@@ -82,7 +82,7 @@ def heft(G: nx.DiGraph, num_machines: int) -> tuple[dict, float]:
 
     Returns:
         schedule:  dict {machine_id: [(task_id, start_time, finish_time), ...]}
-        makespan:  float — the minimized Cmax.
+        makespan:  float - the minimized Cmax.
     """
     # -------------------------------------------------------------------------
     # PHASE 1: Compute upward rank for every task
@@ -90,7 +90,7 @@ def heft(G: nx.DiGraph, num_machines: int) -> tuple[dict, float]:
     avg_exec = _compute_avg_exec(G, num_machines)
     rank_u   = _compute_upward_rank(G, avg_exec)
 
-    # Sort tasks by descending upward rank — highest rank gets scheduled first.
+    # Sort tasks by descending upward rank - highest rank gets scheduled first.
     # Equal ranks are common (e.g. TGFF tasks of the same type), so ties are broken
     # deterministically by the node's position in G. A lexicographical topological
     # sort is used so that, even when a zero-time task gives a parent and its child

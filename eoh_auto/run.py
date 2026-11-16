@@ -9,7 +9,7 @@ Everything is logged in runs/<name>/: calls.jsonl (every prompt and response), c
 its fitness or error), population_gXX.json (checkpoint after each generation). --resume continues from the last checkpoint.
 
 Usage:
-  python -m eoh_auto.run --name smoke --provider groq --model openai/gpt-oss-120b --N 3 --gens 1
+  python -m eoh_auto.run --name nvidia_bolt_e4b_s0 --provider nvidia --model nvidia/nemotron-3.5-bolt-e4b --N 10 --gens 20 --seed 0 --workers 6 --procs 8 --max_tokens 2048 --interval 2
 """
 import argparse, json, os, random, re, sys, threading, time
 from concurrent.futures import ThreadPoolExecutor
@@ -57,7 +57,7 @@ class Run:
         self.a = a
         self.dir = os.path.join(ROOT, "eoh_auto", "runs", a.name); os.makedirs(self.dir, exist_ok=True)
         self.rng = random.Random(a.seed)
-        self.ev = Evaluator(procs=a.procs, portfolio=a.portfolio)
+        self.ev = Evaluator(procs=a.procs)
         self.seen = {}           # code -> candidate record (avoids re-evaluating identical code)
         self.next_id = 0
         self.tokens = 0
@@ -176,6 +176,5 @@ if __name__ == "__main__":
     ap.add_argument("--reasoning", default=None, help="reasoning_effort for reasoning models (low/medium/high)")
     ap.add_argument("--interval", type=float, default=0.0, help="minimum seconds between LLM call starts")
     ap.add_argument("--http_timeout", type=float, default=300, help="seconds before a hung LLM request is retried")
-    ap.add_argument("--portfolio", action="store_true", help="extension: fitness = gap of Best of 7 + candidate")
     ap.add_argument("--resume", action="store_true")
     Run(ap.parse_args()).main()

@@ -9,7 +9,6 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, ROOT)
 from eoh import framework as fw
 
-BEST7 = ["HEFT", "rank_median", "rank_min", "rank_max", "DLS_paper", "DLS_mean_ins", "DLS_min_ins"]
 _INST = None
 _FN = {}
 
@@ -42,12 +41,10 @@ def _work(args):
 
 
 class Evaluator:
-    def __init__(self, split="train", procs=8, timeout=120, portfolio=False):
+    def __init__(self, split="train", procs=8, timeout=120):
         self.split, self.procs, self.timeout = split, procs, timeout
         self.insts = fw.load(split)
         self.best_known = [x["best_known"] for x in self.insts]
-        # portfolio=True: fitness = mean gap of 'Best of 7 + candidate' (the candidate is rewarded for helping where the 7 rules are weak)
-        self.port = [min(x["base"][k] for k in BEST7) for x in self.insts] if portfolio else None
         self._new_pool()
 
     def _new_pool(self):
@@ -65,8 +62,7 @@ class Evaluator:
         if errs:
             return None, errs[0], None
         ms = [m for m, _ in res]
-        eff = ms if self.port is None else [min(m, q) for m, q in zip(ms, self.port)]
-        gaps = [(m / b - 1) * 100 for m, b in zip(eff, self.best_known)]
+        gaps = [(m / b - 1) * 100 for m, b in zip(ms, self.best_known)]
         return sum(gaps) / len(gaps), None, ms
 
     def close(self):

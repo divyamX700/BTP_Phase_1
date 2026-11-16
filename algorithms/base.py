@@ -35,7 +35,7 @@ def earliest_predecessor_finish(task: str, G: nx.DiGraph, task_finish: dict) -> 
     task_finish: dict mapping task_id -> finish_time of that task.
     """
     if G.in_degree(task) == 0:
-        return 0.0  # Entry node — no predecessors, ready at time 0
+        return 0.0  # Entry node - no predecessors, ready at time 0
     for pred in G.predecessors(task):
         if pred not in task_finish:
             raise RuntimeError(
@@ -64,7 +64,7 @@ def earliest_free_slot_on_machine(machine_tasks: list, ready_time: float, durati
         # Otherwise push start time to after this interval
         candidate_start = max(candidate_start, f)
     
-    # No gap found — schedule after the last task
+    # No gap found - schedule after the last task
     return candidate_start
 
 

@@ -18,7 +18,7 @@ MIN-MIN:
   
   Philosophy: "Do the easiest/quickest task first."
   Benefit: Frees up machines quickly. Works well when tasks are small and
-           numerous — it keeps machines busy constantly.
+           numerous - it keeps machines busy constantly.
   Risk: May leave large tasks stuck at the end, causing a long tail.
 
 MAX-MIN:
