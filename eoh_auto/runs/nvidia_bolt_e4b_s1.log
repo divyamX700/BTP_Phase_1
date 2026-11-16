@@ -1,0 +1,1063 @@
+run nvidia_bolt_e4b_s1: nvidia / nvidia/nemotron-3.5-bolt-e4b, N=10, generations=20, p=5
+generation 0 (initial population)
+  #   0 seed  gap 5.611%                   HEFT: the task with the highest upward rank (mean times) goes first, on the machine where 
+  #   1 seed  gap 4.627%                   DLS: trade the length of the chain behind the task plus its mean time against how early it
+  #   2 init  FAILED (KeyError: 'pair')    The score prioritizes tasks with high criticality (long critical path) on machines where t
+  #   3 init  FAILED (KeyError: 'pair features') Prioritize pairs that offer the largest immediate reduction in estimated remaining work, b
+  #   4 init  FAILED (KeyError: 'pair')    Prioritize pairs that minimize the immediate estimated finish time while favoring tasks wi
+  #   5 init  FAILED (KeyError: 'pair')    Prioritize tasks that contribute most to the critical path while favoring placements on ma
+  #   6 init  FAILED (KeyError: 'pair')    Prioritize tasks that offer the best immediate makespan reduction by scheduling them on th
+  #   7 init  FAILED (KeyError: 'pair')    Prioritize the pair that minimizes the potential makespan contribution, calculated as the 
+  #   8 init  FAILED (KeyError: 'pair')    Prioritize tasks that are critical to the overall makespan by balancing expected processin
+  #   9 init  FAILED (KeyError: 'pair')    Prioritize pairs (t, k) that minimize the earliest completion time adjusted by the task's 
+  #  10 init  FAILED (AttributeError: 'float' object has no attribute 'values') Prioritize tasks that are critical to the overall schedule by maximizing the ratio of thei
+  #  11 init  FAILED (KeyError: 'pair')    Prioritize the task-machine pair that minimizes the earliest finish time (EFT) while favor
+== generation 0: best gap 4.627%  |  population 4.63, 5.61  |  tokens so far 7192
+generation 1
+  #  12 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high execution time variability on the best machine relative to thei
+  #  13 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that are most critical based on their minimum execution time and assign t
+  #  14 E1    gap 22.832%                  Prioritize tasks with high average time variability relative to their expected rank, favor
+  #  15 E1    gap 82.597%                  Prioritize tasks with high criticality (descendants) combined with scheduling on the machi
+  [nvidia] HTTP 502, waiting 10s (attempt 1/30): {"type":"about:blank","title":"Bad Gateway","status":502,"detail":"Upstream request failed."}
+
+  #  16 E1    gap 22.547%                  Prioritize tasks that are most constrained by their minimum execution time relative to the
+  #  17 E1    gap 90.007%                  Prioritize tasks with high descendant count and favor machines that result in a low relati
+  #  18 E1    gap 22.951%                  Prioritize tasks with high descendant count relative to their execution time on the best m
+  #  19 E1    gap 214.239%                 Prioritize tasks with high impact on overall makespan, favoring placements that minimize t
+  #  20 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high variability relative to their expected execution time on the fa
+  #  21 E1    gap 23.007%                  Prioritize tasks that are bottleneck-prone (high variance relative to mean) on the machine
+  #  22 E2    gap 452.979%                 Prioritize tasks with high criticality (rank) but favor placements that minimize the *pote
+  #  23 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that have a high dependency chain relative to their expected processing t
+  #  24 E2    gap 793.295%                 Prioritize tasks by the ratio of their structural importance (longest chain based on media
+  #  25 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on the ratio of their mean rank to their minimum possible execution
+  #  26 E2    gap 117.429%                 The new heuristic prioritizes tasks with high path criticality but penalizes assignments t
+  #  27 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high impact (high rank) but favor assignments that minimize machine 
+  #  28 E2    gap 8.387%                   eft
+  #  29 E2    gap 15.840%                  Prioritize tasks that are most constrained by their earliest start time relative to their 
+  #  30 E2    gap 202.187%                 Prioritize tasks that offer the largest reduction in potential makespan by scheduling them
+  #  31 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on the ratio of their critical path length (mean) to their minimum 
+  #  32 M1    gap 5.863%                   Prioritize tasks with the highest rank based on median time, then select the machine that 
+  #  33 M1    gap 5.863%                   Prioritize tasks with higher median rank and favor machines that minimize the immediate fi
+  #  34 M1    gap 34.132%                  Prioritize tasks that maintain a good critical path projection while favoring slightly ear
+  #  35 M1    gap 5.113%                   Trade the longest remaining path (using minimum time) against the earliest achievable fini
+  #  36 M1    gap 5.586%                   Prioritize tasks with higher minimum upward rank on the machine that yields the lowest ear
+  #  37 M1    gap 5.863%                   Prioritize tasks with high median rank while favoring the machine that yields a reasonably
+  #  38 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high median upward rank on the machine that offers a good balance be
+  #  39 M1    FAILED (ZeroDivisionError: division by zero) Balance the critical path length contribution with the normalized potential completion tim
+  #  40 M1    gap 793.295%                 Prioritize tasks based on median rank combined with the earliest finish time on the best m
+  #  41 M1    gap 7.166%                   Prioritize tasks with higher average upward rank but favor assignment to the machine that 
+  #  42 M2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that finish early on the fastest available machine, adjusted by the criti
+  #  43 M2    gap 5.586%                   Prioritize tasks with high minimum rank on the machine that offers the lowest earliest fin
+  #  44 M2    gap 793.295%                 Prioritize tasks with minimum execution time on the best machine combined with a preferenc
+  #  45 M2    gap 793.295%                 Prioritize tasks with the minimum estimated execution time on their best machine, weighted
+  #  46 M2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks on machines where the task has its minimum execution time relative to its
+  #  47 M2    gap 14.417%                  Prioritize tasks with minimum processing time on the best machine, while slightly favoring
+  #  48 M2    gap 20.160%                  Prioritize tasks with high descendant count and short expected finish times.
+  #  49 M2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high criticality (longest path) and prioritize faster execution on t
+  #  50 M2    gap 13.910%                  Prioritize tasks with the minimum expected execution time on the machine that yields the o
+  #  51 M2    gap 7.346%                   Prioritize tasks with short expected finish times while considering their critical path le
+  #  52 M3    gap 6.667%                   Prioritize tasks that maximize the potential for early completion by balancing remaining w
+  #  53 M3    gap 5.611%                   Prioritize tasks with higher mean upward rank, then break ties by favoring earlier estimat
+  #  54 M3    gap 6.667%                   Prioritize tasks by their longest path mean rank, and select the machine that minimizes th
+  #  55 M3    gap 793.295%                 Prioritize tasks with higher mean upward rank, and among them, select the assignment leadi
+  #  56 M3    gap 6.667%                   Prioritize tasks with high downstream work while favoring early completion.
+  #  57 M3    gap 6.667%                   Prioritize tasks with a high mean rank and relatively low expected finish time on the cand
+  #  58 M3    gap 7.346%                   Prioritize tasks with a high weighted chain length relative to their earliest possible com
+  #  59 M3    gap 793.295%                 Prioritize the task with the highest average rank, then choose the machine that minimizes 
+  #  60 M3    gap 6.667%                   Prioritize tasks that are critical in the remaining graph while favoring early completion 
+  #  61 M3    gap 7.346%                   Prioritize tasks that are critical in the graph (high rank) while favoring assignments tha
+== generation 1: best gap 4.627%  |  population 4.63, 5.11, 5.59, 5.61, 5.86, 5.86, 6.67, 7.17, 7.35, 8.39  |  tokens so far 42043
+generation 2
+  #  62 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high successor counts and favor machines that minimize the relative 
+  #  63 E1    gap 793.295%                 Prioritize tasks based on their task completion time variance relative to the best possibl
+  #  64 E1    gap 436.167%                 Prioritize tasks based on their relative execution time on the assigned machine while favo
+  #  65 E1    gap 13.017%                  Prioritize tasks with high total execution potential (mean duration across all machines) o
+  #  66 E1    gap 793.295%                 Prioritize tasks that have the highest ratio of critical path length to the potential mini
+  #  67 E1    gap 90.973%                  Prioritize tasks that maximize the ratio of their upward rank (mean) to the relative execu
+  #  68 E1    gap 793.295%                 Prioritize tasks based on their execution time variance relative to their average time, sc
+  #  69 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high descendant count and few successors, favoring machines that min
+  #  70 E1    gap 853.320%                 Prioritize tasks with high average execution time across machines on the machine that mini
+  #  71 E1    gap 22.884%                  Prioritize tasks based on the maximum execution time across all machines relative to the s
+  #  72 E2    gap 793.295%                 Prioritize tasks that maximize the ratio of their critical path length (using mean time) t
+  #  73 E2    FAILED (SyntaxError: unterminated string literal (detected at line 6) Prioritize tasks based on the potential speedup achieved by assigning them to the machine 
+  #  74 E2    gap 91.012%                  Prioritize tasks that offer the best ratio of remaining critical path length (using median
+  #  75 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that offer the best ratio of the shortest possible remaining path (using 
+  #  76 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on the ratio of their expected execution time (mean) to the minimum
+  #  77 E2    gap 793.295%                 Prioritize tasks based on their relative execution time against the expected completion ti
+  #  78 E2    gap 88.399%                  Prioritize tasks by their normalized execution time on the best machine relative to their 
+  #  79 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on the ratio of their mean rank to the time taken on the best avail
+  #  80 E2    gap 793.295%                 Prioritize tasks with a balanced measure of criticality (median rank) relative to their ex
+  #  81 E2    gap 10.127%                  Prioritize tasks with the highest mean rank scaled by the task's inherent time variability
+  #  82 M1    gap 7.346%                   Prioritize tasks with high mean rank relative to their potential completion time on the ma
+  #  83 M1    gap 793.295%                 Prioritize tasks that maximize the ratio of their mean rank to their minimum possible fini
+  #  84 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with higher minimum upward rank on the machine that yields the earliest f
+  #  85 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that have a high ratio of critical path length to their expected executio
+  #  86 M1    gap 5.611%                   Prioritize tasks with higher mean upward rank on the machine that yields the lowest earlie
+  #  87 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with higher rank_mean and smaller normalized completion time on the best 
+  #  88 M1    gap 7.346%                   Prioritize tasks that maximize the ratio of the remaining mean work chain length to the es
+  #  89 M1    gap 8.919%                   Prioritize tasks based on their minimum execution time weighted by their longest path (min
+  #  90 M1    gap 5.127%                   Trade the longest remaining path (using median time) against the earliest achievable finis
+  #  91 M1    gap 5.351%                   Prioritize tasks that are close to finishing early while still accounting for their expect
+  #  92 M2    FAILED (KeyError: '1/eft_best') Prioritize tasks that minimize their completion time on the best machine, weighted by the 
+  #  93 M2    gap 404.575%                 Prioritize tasks with high downstream workload while favoring early completion on machines
+  #  94 M2    gap 6.300%                   Prioritize tasks with higher minimum rank while favoring assignment to the machine that mi
+  #  95 M2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high mean rank scaled by the inverse of their minimum possible compl
+  #  96 M2    gap 5.611%                   Prioritize tasks with the highest rank based on mean time and select the machine that mini
+  #  97 M2    gap 6.667%                   Prioritize tasks with high average path length and select the machine that minimizes the e
+  #  98 M2    gap 90.974%                  Prioritize tasks that are short on the machine they are best suited for, weighted by their
+  #  99 M2    gap 793.295%                 Prioritize tasks with high mean rank and a small ratio of task minimum time to the earlies
+  # 100 M2    gap 793.295%                 Prioritize tasks that minimize the immediate completion time on the best machine while con
+  # 101 M2    gap 5.611%                   Prioritize tasks with the highest mean rank and select the machine that minimizes the resu
+  # 102 M3    gap 793.295%                 Prioritize tasks with the highest mean upward rank on the machine that yields the minimum 
+  # 103 M3    gap 793.295%                 Prioritize tasks with the highest mean upward rank on the machine that yields the minimum 
+  # 104 M3    gap 1191.085%                Prioritize tasks with the longest remaining path using mean time, penalized by the differe
+  # 105 M3    gap 5.611%                   Prioritize tasks with high mean rank while minimizing the estimated finish time on the ass
+  # 106 M3    gap 5.586%                   Prioritize tasks by their minimum rank and assign them to the machine minimizing the earli
+  # 107 M3    gap 8.871%                   Prioritize tasks with longer minimum remaining paths while favoring earlier achievable fin
+  # 108 M3    gap 6.667%                   Score based on minimizing the expected finish time while prioritizing tasks with longer re
+  # 109 M3    gap 793.295%                 Prioritize tasks with high median rank while using the machine that minimizes the earliest
+  # 110 M3    gap 5.611%                   Prioritize tasks with higher mean upward rank on the machine that yields the lowest earlie
+  # 111 M3    gap 5.611%                   Prioritize tasks with the highest rank based on mean time, and among those, select the mac
+== generation 2: best gap 4.627%  |  population 4.63, 5.11, 5.13, 5.35, 5.59, 5.61, 5.61, 5.86, 5.86, 6.30  |  tokens so far 80410
+generation 3
+  # 112 E1    gap 97.939%                  Prioritize tasks that are critical in terms of their relative execution time and assign th
+  # 113 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that are critical based on their expected time on their best machine rela
+  # 114 E1    gap 12.580%                  Prioritize tasks with high descendant count and high depth while strongly favoring the mac
+  # 115 E1    gap 28.211%                  Prioritize tasks based on their execution time variability relative to their average remai
+  # 116 E1    gap 201.739%                 Prioritize tasks with high descendant count and small required time ratio on the best mach
+  # 117 E1    gap 793.295%                 Prioritize tasks with high descendant count and minimum time rank, while strongly penalizi
+  # 118 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high descendant count and favor the machine that minimizes the ratio
+  # 119 E1    gap 793.295%                 Prioritize tasks with high average remaining work relative to the time required on the bes
+  # 120 E1    gap 12.193%                  Prioritize tasks with high descendant count while strongly favoring the machine that minim
+  # 121 E1    gap 405.050%                 Prioritize tasks that are resource-intensive relative to their minimum processing time on 
+  # 122 E2    gap 199.692%                 Prioritize tasks with high descendant count while favoring the machine that yields the min
+  # 123 E2    gap 7.487%                   Prioritize tasks with the highest potential utilization ratio (descendant count weighted b
+  # 124 E2    gap 793.295%                 Prioritize tasks based on the ratio of their minimum remaining work to the expected finish
+  # 125 E2    gap 82.597%                  Prioritize tasks based on the urgency derived from their relative execution time on the se
+  # 126 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that have a high ratio of their expected remaining work to the potential 
+  # 127 E2    gap 30.304%                  Prioritize tasks based on a combination of their average execution time and machine suitab
+  # 128 E2    gap 93.556%                  Prioritize tasks that offer the best ratio of remaining work (using mean rank) to the requ
+  # 129 E2    gap 17.401%                  Prioritize tasks based on the ratio of their required average processing time to the minim
+  # 130 E2    gap 396.039%                 Prioritize tasks based on their normalized processing time relative to the best available 
+  # 131 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that have a high average processing time across all machines relative to 
+  # 132 M1    gap 4.627%                   Trade the longest remaining path (using mean time) against the earliest achievable finish 
+  # 133 M1    gap 4.627%                   Trade the longest remaining path (using mean time) against the earliest achievable finish 
+  # 134 M1    gap 21.678%                  Prioritize tasks with higher average remaining work relative to their minimum possible fin
+  # 135 M1    gap 4.627%                   Trade the longest remaining path (using mean time) against the earliest achievable finish 
+  # 136 M1    gap 7.166%                   Prioritize tasks with higher mean rank while favoring assignment to the machine that minim
+  # 137 M1    gap 9.401%                   Prioritize tasks with high expected remaining work weighted by their minimum execution tim
+  # 138 M1    gap 793.295%                 Prioritize tasks based on their minimum execution time relative to the best finish time ac
+  # 139 M1    gap 793.295%                 Prioritize tasks with higher median rank combined with a penalty for later earliest finish
+  # 140 M1    gap 5.611%                   Prioritize tasks with higher mean rank while penalizing assignments to machines with large
+  # 141 M1    gap 793.295%                 Prioritize tasks that offer a good balance between high expected remaining work and low im
+  # 142 M2    gap 5.815%                   Prioritize tasks with high criticality (longest path) while favoring placements that minim
+  # 143 M2    gap 6.667%                   Prioritize tasks with high mean path length combined with low estimated finish time on the
+  # 144 M2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with minimum execution time on the fastest machine while considering the 
+  # 145 M2    gap 5.611%                   Prioritize tasks with the highest mean rank, and among those, select the machine that mini
+  # 146 M2    gap 5.611%                   Prioritize tasks with high mean rank while heavily penalizing high completion time.
+  # 147 M2    gap 873.138%                 Prioritize tasks with high processing time on the current machine weighted by the minimum 
+  # 148 M2    gap 6.667%                   Prioritize tasks with a high mean path length and assign them to the machine that minimize
+  # 149 M2    gap 5.611%                   Prioritize tasks with higher mean upward rank on the machine that yields the lowest earlie
+  # 150 M2    gap 5.611%                   Prioritize tasks with higher mean upward rank on the machine that yields the lowest earlie
+  # 151 M2    gap 5.586%                   Prioritize tasks with high minimum rank to finish fast on the machine offering the smalles
+  # 152 M3    gap 8.871%                   Prioritize the task with the longest minimum remaining path while penalizing large makespa
+  # 153 M3    gap 7.346%                   Prioritize tasks with high weighted chain length relative to their immediate expected comp
+  # 154 M3    gap 8.919%                   Prioritize tasks with longer minimum remaining paths weighted by their minimum execution t
+  # 155 M3    gap 793.295%                 Prioritize tasks that are deep in the graph combined with their expected processing time, 
+  # 156 M3    gap 5.611%                   Prioritize tasks with higher mean upward rank on the machine that yields the lowest earlie
+  # 157 M3    gap 7.346%                   Prioritize tasks with high downstream impact relative to their expected completion time.
+  # 158 M3    gap 9.326%                   Prioritize tasks with a high average chain length weighted by their mean execution time, w
+  # 159 M3    gap 793.295%                 Prioritize the task with the highest average rank, then select the machine that yields the
+  # 160 M3    gap 7.051%                   Prioritize tasks with high critical path estimates while favoring early completion times.
+  # 161 M3    gap 5.863%                   Prioritize tasks with the highest median rank, and break ties by choosing the machine that
+== generation 3: best gap 4.627%  |  population 4.63, 5.11, 5.13, 5.35, 5.59, 5.61, 5.61, 5.61, 5.82, 5.86  |  tokens so far 118636
+generation 4
+  # 162 E1    FAILED (KeyError: 'rank_max') Prioritize tasks with high processing variability relative to their importance (rank\_max)
+  # 163 E1    gap 335.764%                 Prioritize tasks that are bottleneck-prone by their relative processing time and favor mac
+  # 164 E1    gap 46.349%                  Prioritize tasks with low execution time relative to their minimum possible time, favoring
+  # 165 E1    gap 1041.165%                Prioritize tasks that are most constrained by machine availability relative to their execu
+  # 166 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that are bottleneck candidates by high mean processing time relative to t
+  # 167 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on their execution time variability relative to their expected rema
+  # 168 E1    gap 23.348%                  Prioritize tasks based on their required processing time variability (standard deviation) 
+  # 169 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with the highest execution time on the assigned machine relative to the t
+  # 170 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that offer the best utilization of the currently available processing pow
+  # 171 E1    gap 370.255%                 Prioritize tasks with higher average required processing time relative to their minimum ti
+  # 172 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on their average execution time relative to the minimum execution t
+  # 173 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that are tightly constrained by their minimum execution times relative to
+  # 174 E2    gap 26.013%                  Prioritize tasks with the highest proportion of their minimum completion time relative to 
+  # 175 E2    gap 16.400%                  Prioritize tasks with high criticality (based on mean rank) relative to their execution ti
+  # 176 E2    gap 13.910%                  Prioritize tasks based on the inverse of their expected relative cost ($\frac{1
+  # 177 E2    gap 177.949%                 Prioritize tasks based on their average processing time relative to the machine's current 
+  # 178 E2    gap 5.611%                   eft
+  # 179 E2    gap 11.183%                  Prioritize tasks with high descendant count and high task execution time variance while mi
+  # 180 E2    gap 832.424%                 Prioritize tasks that are most constrained by their execution time relative to the best po
+  # 181 E2    gap 405.050%                 Prioritize tasks based on their relative time requirement compared to the machine's speed,
+  # 182 M1    gap 793.295%                 Balance the longest remaining path (using mean time) against the average finish time acros
+  # 183 M1    gap 5.611%                   Prioritize tasks with higher mean upward rank on the machine that yields the lowest earlie
+  # 184 M1    gap 9.322%                   Prioritize tasks with the longest critical path (using mean time) weighted by their minimu
+  # 185 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high median rank while minimizing the ratio of estimated finish time
+  # 186 M1    gap 4.057%                   Prioritize tasks with high chain length and utilize the minimum possible execution time on
+  # 187 M1    gap 5.611%                   Prioritize tasks with the highest rank based on mean time, then select the machine that re
+  # 188 M1    gap 5.586%                   Prioritize tasks with higher minimum rank while rewarding assignments to machines where th
+  # 189 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with a high upward rank but favor assignment to a machine that minimizes 
+  # 190 M1    gap 4.627%                   Trade the longest remaining path (using mean time) against the earliest achievable finish 
+  # 191 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high mean chain length while favoring placements that minimize the r
+  # 192 M2    gap 5.611%                   Prioritize tasks with the highest rank based on mean time, and select the machine that min
+  # 193 M2    gap 6.308%                   Prioritize tasks with short expected completion times while still considering the critical
+  # 194 M2    gap 5.586%                   Prioritize tasks with higher minimum rank while favoring assignments to machines that yiel
+  # 195 M2    gap 5.586%                   Prioritize tasks with highest minimum rank while favoring assignments to machines that ach
+  # 196 M2    gap 793.295%                 Prioritize tasks with minimum time estimates on the best machine while factoring in readin
+  # 197 M2    gap 5.586%                   Prioritize tasks with high minimum rank while minimizing the estimated finish time on the 
+  # 198 M2    gap 5.505%                   Prioritize tasks with high expected remaining work and short execution time on the specifi
+  # 199 M2    gap 14.055%                  Prioritize tasks with high expected processing time and favor placements that minimize the
+  # 200 M2    gap 5.611%                   Prioritize tasks with the highest mean rank and select the machine that minimizes the resu
+  # 201 M2    gap 4.849%                   Prioritize tasks that offer a good balance between high expected remaining work and a very
+  # 202 M3    gap 854.995%                 Prioritize tasks with higher mean rank while using the ratio of task time to minimum task 
+  # 203 M3    gap 5.271%                   Prioritize tasks with high expected remaining work (rank_mean) while penalizing large abso
+  # 204 M3    gap 8.797%                   Prioritize tasks with the longest minimum remaining path weighted by their actual time on 
+  # 205 M3    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with the longest remaining path adjusted by their average execution time 
+  # 206 M3    gap 7.346%                   Prioritize tasks with a high critical path length relative to their expected completion ti
+  # 207 M3    gap 4.968%                   Prioritize tasks with high mean chain length while favoring placements that minimize the r
+  # 208 M3    gap 5.863%                   Prioritize tasks with the highest rank based on median time, and select the machine that m
+  # 209 M3    gap 9.326%                   Prioritize tasks with a long critical path weighted by their mean execution time, favoring
+  # 210 M3    gap 5.611%                   Prioritize tasks with high mean rank and break ties by choosing the machine that yields th
+  # 211 M3    gap 5.271%                   Prioritize tasks with high expected remaining work and low immediate completion time relat
+== generation 4: best gap 4.057%  |  population 4.06, 4.63, 4.85, 4.97, 5.11, 5.13, 5.27, 5.27, 5.35, 5.50  |  tokens so far 157443
+generation 5
+  # 212 E1    gap 26.386%                  Prioritize tasks that are critical based on maximum execution time variation relative to t
+  # 213 E1    gap 19.897%                  Prioritize tasks that offer the largest reduction in estimated makespan by minimizing the 
+  # 214 E1    gap 859.562%                 Prioritize tasks that offer a high relative processing time on the chosen machine while ac
+  # 215 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high processing variance relative to their mean time, balanced again
+  # 216 E1    gap 793.295%                 Prioritize tasks that offer the best utilization of the machine's current idle time relati
+  # 217 E1    gap 7.346%                   Prioritize tasks that maximize the ratio of remaining expected work to the earliest possib
+  # 218 E1    gap 20.201%                  Prioritize tasks that have a high ratio of expected remaining work to their potential exec
+  # 219 E1    gap 33.106%                  Prioritize tasks with high dependency complexity (descendants) and choose the machine that
+  # 220 E1    gap 887.127%                 Prioritize tasks that have a high processing time relative to their minimum possible time 
+  # 221 E1    gap 13.705%                  Prioritize the placement that maximizes the ratio of the task's minimal execution time to 
+  # 222 E2    FAILED (ZeroDivisionError: division by zero) Score by prioritizing tasks with high expected remaining work relative to their minimum ex
+  # 223 E2    gap 19.569%                  Prioritize tasks that maximize the ratio of expected remaining work (mean rank) to the req
+  # 224 E2    gap 141.560%                 Prioritize tasks that offer the best ratio of expected remaining work to the execution tim
+  # 225 E2    gap 17.595%                  Prioritize tasks by their potential impact on machine utilization relative to their critic
+  # 226 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that offer a strong ratio of potential remaining work (mean rank) to the 
+  # 227 E2    gap 793.295%                 Prioritize tasks that have a high criticality (descendants) weighted by their most constra
+  # 228 E2    gap 28.050%                  Prioritize tasks based on the urgency derived from the ratio of remaining work (using the 
+  # 229 E2    gap 5.863%                   Prioritize tasks based on their overall criticality (longest path) while heavily favoring 
+  # 230 E2    gap 94.168%                  Prioritize tasks that offer the best ratio of expected remaining work to the time required
+  # 231 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that offer the best balance between minimizing the expected completion ti
+  # 232 M1    gap 5.164%                   Prioritize tasks with high mean remaining work but give less weight to the immediate compl
+  # 233 M1    gap 7.353%                   Prioritize tasks with high median chain length while favoring placements that minimize the
+  # 234 M1    gap 5.358%                   Prioritize tasks with high median chain length while favoring placements that minimize the
+  # 235 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high chain length while favoring assignments that yield a relatively
+  # 236 M1    gap 8.919%                   Prioritize tasks with long minimum paths weighted by their minimum processing time, while 
+  # 237 M1    gap 5.380%                   Prioritize tasks with high estimated minimum remaining work while slightly penalizing the 
+  # 238 M1    gap 5.863%                   Prioritize tasks with high median chain length while favoring placements that minimize the
+  # 239 M1    gap 90.974%                  Prioritize tasks with high expected remaining work relative to their normalized execution 
+  # 240 M1    gap 793.295%                 Prioritize the task with the longest remaining path (using mean time) weighted by its mini
+  # 241 M1    gap 4.200%                   Prioritize tasks with high chain length and utilize the shortest possible execution time o
+  # 242 M2    gap 90.372%                  Prioritize tasks with a high mean remaining path while heavily penalizing large task execu
+  # 243 M2    gap 5.130%                   Prioritize tasks with high total remaining work and prioritize faster execution on the spe
+  # 244 M2    gap 5.522%                   Prioritize tasks with minimum expected time while heavily favoring earlier completion time
+  # 245 M2    gap 5.185%                   Prioritize tasks with maximum minimum chain length while favoring placements that minimize
+  # 246 M2    gap 58.154%                  Prioritize tasks with short expected execution times on the assigned machine while heavily
+  # 247 M2    gap 7.346%                   Prioritize tasks with high remaining work (mean time) scaled by the inverse of the expecte
+  # 248 M2    gap 167.210%                 Prioritize tasks with long remaining work combined with minimizing the immediate machine f
+  # 249 M2    gap 22.895%                  Prioritize tasks with short chains relative to their expected finish time on the machine.
+  # 250 M2    gap 1293.311%                Prioritize tasks that finish earliest on the machine, weighted by their expected remaining
+  # 251 M2    gap 4.798%                   Prioritize tasks that offer a strong balance between minimizing immediate completion time 
+  # 252 M3    gap 4.057%                   Prioritize tasks with high average chain length and utilize the shortest execution time on
+  # 253 M3    gap 5.271%                   Prioritize tasks with high expected remaining work while penalizing longer immediate compl
+  # 254 M3    gap 6.667%                   Prioritize tasks with a long critical path using mean time, then favor the minimum possibl
+  # 255 M3    gap 793.295%                 Prioritize tasks with high expected remaining work relative to their best possible finish 
+  # 256 M3    gap 8.871%                   Prioritize tasks on machines that yield the earliest finish time, weighted by the minimum 
+  # 257 M3    gap 5.535%                   Prioritize tasks with high expected remaining work (rank_mean) while using a relative fini
+  # 258 M3    gap 7.346%                   Prioritize tasks with high estimated remaining work relative to their immediate completion
+  # 259 M3    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with longer remaining paths relative to their minimum execution time on t
+  # 260 M3    gap 5.271%                   Prioritize tasks with high expected remaining work (rank_mean) and favor assignments leadi
+  # 261 M3    gap 5.271%                   Prioritize tasks with high mean remaining work while penalizing large immediate completion
+== generation 5: best gap 4.057%  |  population 4.06, 4.20, 4.63, 4.80, 4.85, 4.97, 5.11, 5.13, 5.13, 5.16  |  tokens so far 196963
+generation 6
+  # 262 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that are critical (high rank_mean) and favor placements that minimize the
+  # 263 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with the shortest execution time on the current machine weighted by the t
+  # 264 E1    gap 26.105%                  Prioritize tasks based on the shortest expected ratio of execution time to remaining criti
+  # 265 E1    gap 23.603%                  Prioritize tasks that have a high relative execution time on the chosen machine combined w
+  # 266 E1    gap 12.193%                  Prioritize tasks with high structural importance (descendants) while strongly favoring the
+  # 267 E1    gap 7.346%                   Prioritize tasks that maximize the ratio of expected remaining work (mean rank) to the ear
+  # 268 E1    gap 82.597%                  Prioritize tasks that are critical to the graph structure (high descendant count) while fa
+  # 269 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high descendant count weighted by the ratio of execution time on mac
+  # 270 E1    gap 921.127%                 Prioritize tasks that are bottleneck-prone based on their relative execution time on the c
+  # 271 E1    gap 199.703%                 Prioritize tasks with high descendant count and low relative execution time on the machine
+  # 272 E2    gap 7.346%                   rank\_mean
+  # 273 E2    gap 884.979%                 Prioritize tasks by their relative execution time and the earliness of their best possible
+  # 274 E2    gap 856.393%                 Prioritize tasks based on their relative execution time versus the minimum possible execut
+  # 275 E2    gap 20.382%                  Prioritize tasks that have a high ratio of their longest path (using mean time) to their m
+  # 276 E2    gap 17.589%                  Prioritize tasks based on their execution time variability relative to their criticality b
+  # 277 E2    gap 8.387%                   Prioritize tasks that maximize the utilization of the machine by scheduling them early rel
+  # 278 E2    gap 128.713%                 Prioritize tasks with the largest potential impact on the makespan (based on mean chain le
+  # 279 E2    gap 793.295%                 Prioritize tasks based on their critical path using the median time and favor machine assi
+  # 280 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on their average execution time relative to the machine's capabilit
+  # 281 E2    gap 94.168%                  Prioritize tasks by the ratio of their longest chain work to their execution time on the m
+  # 282 M1    gap 6.300%                   Prioritize tasks with high minimum chain length while favoring placements that minimize th
+  # 283 M1    gap 4.627%                   Trade the longest remaining path (using mean time) against the earliest achievable finish 
+  # 284 M1    gap 5.127%                   Trade the longest remaining path (using median time) against the earliest achievable finis
+  # 285 M1    gap 6.667%                   Prioritize the task with the longest critical path (using mean time) and penalize it by th
+  # 286 M1    gap 7.299%                   Prioritize tasks with high median chain length while favoring placements that minimize the
+  # 287 M1    gap 7.346%                   Prioritize tasks that maximize the ratio of remaining weighted workload (based on mean ran
+  # 288 M1    gap 7.299%                   Prioritize tasks with high median chain length while favoring placements that minimize the
+  # 289 M1    gap 5.045%                   Prioritize tasks with high mean remaining work while increasing the influence of immediate
+  # 290 M1    gap 5.358%                   Prioritize tasks with high median chain length while favoring placements that minimize the
+  # 291 M1    gap 11.477%                  Prioritize tasks with high mean chain length, favor faster execution times relative to the
+  # 292 M2    gap 9.596%                   Prioritize tasks with high descendant count and utilize the minimum possible execution tim
+  # 293 M2    gap 1268.524%                Prioritize tasks with high earliest finish time and low mean remaining work, favoring earl
+  # 294 M2    gap 4.945%                   Prioritize tasks with high minimum chain length while favoring placements that minimize th
+  # 295 M2    gap 7.346%                   Prioritize tasks with longer remaining work relative to their expected completion time on 
+  # 296 M2    gap 4.945%                   Prioritize tasks with high minimum chain length while favoring placements that minimize th
+  # 297 M2    gap 15.965%                  Prioritize tasks that minimize the immediate finish time while still accounting for the re
+  # 298 M2    gap 793.295%                 Prioritize tasks with high expected remaining work and emphasize achieving the absolute ea
+  # 299 M2    FAILED (KeyError: 'rank_max') Prioritize tasks with the longest path considering their maximum execution time and favor 
+  # 300 M2    gap 7.346%                   Prioritize tasks with shorter expected remaining work relative to their earliest possible 
+  # 301 M2    gap 4.672%                   Prioritize tasks that have a high inherent criticality (rank_mean) while aggressively mini
+  # 302 M3    gap 858.298%                 Prioritize tasks with high mean chain length and select the machine that minimizes the res
+  # 303 M3    gap 4.987%                   Prioritize the longest remaining critical path (rank\_mean) balanced by the task's executi
+  # 304 M3    gap 793.295%                 Prioritize tasks with high average remaining workload and low immediate completion time on
+  # 305 M3    gap 16.517%                  Prioritize minimizing the resulting finish time, slightly penalized by the task's mean cha
+  # 306 M3    gap 8.871%                   Prioritize tasks on machines that yield the earliest finish time, adjusted by the minimum 
+  # 307 M3    gap 8.871%                   Prioritize tasks on machines that minimize the earliest finish time, modulated by the shor
+  # 308 M3    gap 6.300%                   Prioritize tasks with longer minimum remaining path when their earliest finish time is rel
+  # 309 M3    gap 6.667%                   Prioritize tasks with the longest remaining path using mean time, tempered by the best ach
+  # 310 M3    gap 793.295%                 Prioritize tasks with the longest mean path to the end, combined with the shortest possibl
+  # 311 M3    gap 90.974%                  Prioritize tasks with the highest average remaining work weighted by the machine's efficie
+== generation 6: best gap 4.057%  |  population 4.06, 4.20, 4.63, 4.67, 4.80, 4.85, 4.95, 4.97, 4.99, 5.04  |  tokens so far 236768
+generation 7
+  # 312 E1    gap 200.833%                 Prioritize tasks based on their relative execution time across machines, heavily weighted 
+  # 313 E1    gap 414.933%                 Prioritize tasks with high descendant count and minimize the ratio of execution time to ea
+  # 314 E1    gap 94.168%                  Prioritize tasks that maximize the ratio of remaining critical work to the potential execu
+  # 315 E1    gap 257.095%                 Prioritize tasks based on their inherent difficulty (max processing time) while strongly f
+  # 316 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on the ratio of their critical path length to their execution time 
+  # 317 E1    gap 47.342%                  Prioritize tasks with high descendant count and low relative execution time on the chosen 
+  # 318 E1    gap 485.617%                 Prioritize tasks that have a high relative execution time on the chosen machine while mini
+  # 319 E1    gap 41.995%                  Prioritize tasks with high descendant count and small relative execution time on the chose
+  # 320 E1    gap 622.841%                 Prioritize tasks based on their urgency relative to machine availability, balancing critic
+  # 321 E1    gap 27.285%                  Prioritize tasks based on the ratio of their longest chain length to their execution time 
+  # 322 E2    gap 19.208%                  The new heuristic prioritizes tasks with high structural importance (descendants) balanced
+  # 323 E2    gap 79.485%                  Prioritize tasks that offer the best ratio of criticality (based on rank\_mean) to the nor
+  # 324 E2    gap 82.597%                  Prioritize tasks that have high descendant counts combined with the best achievable relati
+  # 325 E2    gap 39.698%                  Balance the influence of task criticality (longest path) with the utilization efficiency o
+  # 326 E2    gap 24.042%                  Prioritize tasks with high execution time variability relative to their critical path leng
+  # 327 E2    gap 367.502%                 Prioritize tasks based on their potential for early completion relative to the machine's c
+  # 328 E2    gap 19.998%                  Prioritize tasks based on the ratio of their expected remaining work to the time required 
+  # 329 E2    gap 133.312%                 Prioritize tasks with high descendant count weighted by the potential time saving relative
+  # 330 E2    gap 20.832%                  Prioritize tasks that have a high ratio of remaining work (rank_mean) to their expected pr
+  # 331 E2    gap 405.050%                 Prioritize tasks based on their execution time relative to their minimum possible executio
+  # 332 M1    gap 7.166%                   Prioritize tasks with high inherent criticality (rank_mean) but weight the immediate expec
+  # 333 M1    gap 5.358%                   Prioritize tasks with high median chain length while favoring placements that minimize the
+  # 334 M1    gap 6.667%                   Prioritize tasks with high chain length while favoring assignments that result in the earl
+  # 335 M1    gap 6.925%                   Prioritize tasks with high median chain length while prioritizing lower execution time rel
+  # 336 M1    gap 4.315%                   Prioritize tasks that balance the urgency derived from the longest remaining path (using m
+  # 337 M1    gap 7.346%                   Prioritize tasks with a high expected remaining workload relative to their earliest possib
+  # 338 M1    gap 793.295%                 Prioritize tasks with high minimum execution time on the chosen machine, balanced by the c
+  # 339 M1    gap 373.009%                 Prioritize tasks with high mean chain length and favor the smallest execution time on the 
+  # 340 M1    gap 4.934%                   Prioritize tasks with high weighted average remaining work while strongly penalizing late 
+  # 341 M1    gap 7.051%                   Prioritize tasks that balance the estimated total work remaining (using median rank) again
+  # 342 M2    gap 793.295%                 Prioritize tasks with high descendant count and aim for the earliest possible finish time 
+  # 343 M2    gap 20.098%                  Prioritize tasks with high descendant count and favor machines that allow for a lower over
+  # 344 M2    gap 876.759%                 Prioritize the earliest completion time while slightly favoring tasks with a low execution
+  # 345 M2    gap 5.116%                   Prioritize tasks with a high expected remaining work weighted more heavily, while giving l
+  # 346 M2    gap 5.004%                   Prioritize tasks with the longest mean chain length and maximize the immediate finish time
+  # 347 M2    gap 18.933%                  Prioritize the earliest possible completion time (eft) strongly, while slightly favoring t
+  # 348 M2    gap 11.262%                  Prioritize tasks with high descendant count and minimize the normalized execution time on 
+  # 349 M2    gap 7.346%                   Prioritize tasks that finish earliest, weighted by their critical path length.
+  # 350 M2    gap 5.510%                   Prioritize tasks with high minimum chain length while strongly favoring placements that mi
+  # 351 M2    gap 4.968%                   Prioritize tasks with high mean chain length while favoring placements that minimize the r
+  # 352 M3    gap 7.346%                   Prioritize tasks with a high expected critical path length relative to their estimated com
+  # 353 M3    gap 6.667%                   Prioritize the earliest completion time weighted by the task's criticality (rank\_mean).
+  # 354 M3    gap 793.295%                 Prioritize tasks with high expected remaining work relative to their immediate expected ex
+  # 355 M3    gap 7.346%                   Prioritize tasks with a high mean critical path length, scaled by the inverse of the estim
+  # 356 M3    gap 7.346%                   Prioritize tasks with the longest mean remaining critical path, scaled by the inverse of t
+  # 357 M3    gap 6.667%                   Prioritize tasks based on their expected critical path length while minimizing the immedia
+  # 358 M3    gap 7.346%                   Prioritize tasks based on their expected remaining work scaled by the reciprocal of their 
+  # 359 M3    gap 4.482%                   Prioritize tasks with high remaining workload while favoring assignments that yield an ear
+  # 360 M3    gap 5.045%                   Prioritize tasks based on mean remaining work, modulated by a factor inversely proportiona
+  # 361 M3    gap 4.968%                   Prioritize tasks by their mean chain length, and use a simpler penalty based on the direct
+== generation 7: best gap 4.057%  |  population 4.06, 4.20, 4.31, 4.48, 4.63, 4.67, 4.80, 4.85, 4.93, 4.95  |  tokens so far 276892
+generation 8
+  # 362 E1    gap 22.301%                  Prioritize tasks that have a high proportion of descendants relative to their own executio
+  # 363 E1    gap 7.346%                   Prioritize tasks based on the ratio of their average remaining work to their earliest poss
+  # 364 E1    gap 66.745%                  Prioritize tasks based on their execution time relative to the best achievable finish time
+  # 365 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that minimize the ratio of execution time to the longest remaining path, 
+  # 366 E1    gap 166.928%                 Prioritize tasks with high descendant count, balancing this against the machine's current 
+  # 367 E1    gap 372.144%                 Prioritize tasks that have a high relative workload ($\text{p\_rel
+  # 368 E1    gap 7.346%                   Prioritize tasks based on the ratio of remaining work (mean chain length) to the potential
+  # 369 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that minimize the overall expected idle time incurred by the assignment b
+  # 370 E1    gap 19.822%                  Prioritize tasks with high descendant count and short execution time relative to task mini
+  # 371 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on their relative shortest execution time across all machines combi
+  # 372 E2    gap 198.135%                 Prioritize tasks that are deep in the DAG and have high variability in execution time, fav
+  # 373 E2    gap 7.346%                   Prioritize tasks based on the ratio of remaining work to the earliest achievable finish ti
+  # 374 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that have a high potential impact (descendants/successors) while favoring
+  # 375 E2    gap 19.998%                  Prioritize tasks based on the ratio of remaining work (rank_mean) to the potential machine
+  # 376 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on the ratio of their longest chain work (rank_mean) to their execu
+  # 377 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that offer the best utilization of machine capacity relative to the task'
+  # 378 E2    gap 10.181%                  Prioritize tasks with high structural importance (descendants) weighted by the shortest po
+  # 379 E2    gap 23.325%                  Prioritize tasks with high overall task potential (mean time and descendants) combined wit
+  # 380 E2    gap 126.246%                 Prioritize tasks that offer the best trade-off between minimizing the relative execution t
+  # 381 E2    gap 13.483%                  Prioritize tasks based on their overall urgency (e.g., based on maximum possible duration 
+  # 382 M1    gap 18.590%                  Prioritize tasks with high mean chain length while favoring placements that minimize the r
+  # 383 M1    gap 793.295%                 Prioritize tasks with high mean chain length and utilize the machine that yields the minim
+  # 384 M1    gap 5.127%                   Trade the expected critical path length (using median time) against the earliest finish ti
+  # 385 M1    gap 5.894%                   Prioritize tasks with high minimum remaining workload while favoring assignments that yiel
+  # 386 M1    gap 4.523%                   Prioritize tasks with a high inherent criticality (rank_mean) weighted more heavily, while
+  # 387 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high chain length weighted by mean time and penalize large execution
+  # 388 M1    gap 4.570%                   Prioritize tasks with high mean chain length combined with a focus on the minimum possible
+  # 389 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high remaining work weighted by their relative cost on the machine, 
+  # 390 M1    gap 6.667%                   Prioritize tasks with high remaining workload while strongly favoring assignments that yie
+  # 391 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high average remaining work relative to their minimum execution time
+  # 392 M2    gap 1209.822%                Prioritize tasks based on minimum execution time while slightly favoring higher mean remai
+  # 393 M2    gap 4.507%                   Prioritize tasks with high expected remaining work but heavily penalize large expected fin
+  # 394 M2    gap 5.161%                   Prioritize tasks with high minimum execution time and minimize the immediate expected comp
+  # 395 M2    gap 13.245%                  Prioritize tasks with a high overall processing time on the chosen machine while heavily p
+  # 396 M2    gap 11.603%                  Prioritize tasks with high minimum required time while strongly favoring assignments that 
+  # 397 M2    gap 10.833%                  Prioritize tasks with high inherent criticality (rank_mean) while strongly favoring the im
+  # 398 M2    gap 4.987%                   Prioritize tasks with high structural importance (longest path) and low immediate machine 
+  # 399 M2    gap 6.308%                   Prioritize tasks with short critical path times combined with earlier completion time on t
+  # 400 M2    gap 793.295%                 Prioritize tasks with shortest execution time on the best machine while strongly favoring 
+  # 401 M2    gap 20.160%                  Prioritize tasks with high descendant count and favor placements that minimize the resulti
+  # 402 M3    gap 793.295%                 Prioritize tasks with the highest mean rank adjusted by the task's average processing time
+  # 403 M3    gap 6.667%                   Prioritize tasks with longest mean chain length while preferring machines that yield the e
+  # 404 M3    gap 21.874%                  Prioritize early finish time while using task criticality (rank_mean) as a tie-breaker.
+  # 405 M3    gap 4.934%                   Prioritize tasks with high weighted average remaining work while penalizing the earliest a
+  # 406 M3    gap 6.667%                   Prioritize tasks with high average remaining work (rank_mean) while selecting the machine 
+  # 407 M3    gap 6.667%                   The new heuristic prioritizes tasks that can finish earliest while still considering the c
+  # 408 M3    gap 6.667%                   Prioritize tasks based on their longest mean chain while strongly favoring assignments tha
+  # 409 M3    gap 4.523%                   Prioritize tasks with high mean remaining work while balancing against minimal achievable 
+  # 410 M3    gap 793.295%                 Prioritize tasks with high minimum chain length and select the placement that minimizes th
+  # 411 M3    gap 4.673%                   Prioritize tasks based on their longest remaining path (mean) while favoring lower immedia
+== generation 8: best gap 4.057%  |  population 4.06, 4.20, 4.31, 4.48, 4.51, 4.52, 4.57, 4.63, 4.67, 4.67  |  tokens so far 316811
+generation 9
+  # 412 E1    gap 49.489%                  Prioritize tasks that offer the best relative time efficiency (p_rel) on the machine while
+  # 413 E1    gap 6.560%                   Prioritize tasks that minimize the ratio of expected completion time to the potential work
+  # 414 E1    gap 199.692%                 Prioritize tasks by a composite measure of structural importance (descendants) weighted ag
+  # 415 E1    gap 793.295%                 Prioritize tasks that offer the best ratio of criticality (rank_mean) to the required exec
+  # 416 E1    gap 793.295%                 Prioritize tasks with high resource utilization pressure relative to their expected comple
+  # 417 E1    gap 18.713%                  Prioritize tasks based on the ratio of remaining work to the earliest possible finish time
+  # 418 E1    gap 352.228%                 Prioritize tasks based on their critical path likelihood relative to the machine's current
+  # 419 E1    gap 793.295%                 Prioritize tasks that offer the best ratio of remaining critical path length to the normal
+  # 420 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high descendant count relative to their mean execution time on the c
+  # 421 E1    gap 396.004%                 Prioritize tasks with high overall work relative to machine availability while heavily fav
+  # 422 E2    gap 20.382%                  Prioritize tasks based on their urgency (longest remaining path) relative to how much they
+  # 423 E2    gap 563.525%                 Prioritize tasks based on their execution time relative to the shortest possible time on a
+  # 424 E2    gap 853.074%                 Prioritize tasks based on their relative execution time across all machines (p_rel) scaled
+  # 425 E2    gap 5.440%                   Prioritize tasks based on criticality (longest chain) while strongly favoring assignments 
+  # 426 E2    gap 793.295%                 Prioritize tasks with the highest urgency (longest path) relative to the best achievable e
+  # 427 E2    gap 90.974%                  Prioritize tasks with the highest potential performance ratio, balancing critical path len
+  # 428 E2    gap 665.932%                 Prioritize tasks that have high descendant counts and a low relative execution time on the
+  # 429 E2    gap 90.974%                  Prioritize tasks with the highest criticality (longest path) relative to the execution tim
+  # 430 E2    gap 52.079%                  Prioritize tasks based on the urgency derived from their longest remaining path, scaled by
+  # 431 E2    gap 23.321%                  Prioritize tasks that maximize the ratio of remaining workload (rank\_mean) to the actual 
+  # 432 M1    gap 9.372%                   Prioritize tasks based on their median chain length weighted by their execution time on th
+  # 433 M1    gap 5.252%                   Prioritize tasks with high expected critical path length while minimizing the relative com
+  # 434 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that finish early on the machine which gives the best slack between criti
+  # 435 M1    gap 4.833%                   Prioritize tasks with a high inherent criticality (rank_mean) but use a lower weight for t
+  # 436 M1    gap 793.295%                 Prioritize tasks with high criticality relative to their potential minimum completion time
+  # 437 M1    gap 8.871%                   Prioritize tasks with high minimum remaining workload while strongly favoring assignments 
+  # 438 M1    gap 4.575%                   Prioritize tasks with high potential criticality (rank_mean) while heavily penalizing the 
+  # 439 M1    gap 7.346%                   Prioritize tasks with high critical path length (rank_mean) and favor pairs that lead to a
+  # 440 M1    gap 4.405%                   Prioritize tasks with high expected remaining work while more heavily penalizing the expec
+  # 441 M1    gap 4.699%                   Prioritize tasks with high expected remaining work while slightly penalizing the potential
+  # 442 M2    gap 9.301%                   Prioritize tasks with minimum expected remaining work while strongly favoring early finish
+  # 443 M2    gap 1189.836%                Prioritize tasks with high structural criticality while heavily favoring assignments that 
+  # 444 M2    gap 1293.107%                Prioritize tasks with the shortest expected immediate completion time while slightly consi
+  # 445 M2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with the minimum possible execution time considering criticality, aiming 
+  # 446 M2    gap 10.833%                  Prioritize tasks with the minimum estimated finish time on the selected machine, balanced 
+  # 447 M2    gap 7.051%                   Prioritize tasks with the longest path using median time and select the machine that resul
+  # 448 M2    gap 1217.790%                Prioritize tasks with high mean remaining work and low absolute earliest finish time on th
+  # 449 M2    gap 1209.197%                Prioritize tasks with high descendant count and favor the earliest possible finish time on
+  # 450 M2    gap 4.322%                   Prioritize tasks with high mean chain length and prioritize the minimum execution time on 
+  # 451 M2    gap 193.845%                 Prioritize tasks with high readiness and favor assignments that minimize the machine idle 
+  # 452 M3    gap 4.968%                   Prioritize tasks with high expected remaining work while minimizing the immediate expected
+  # 453 M3    gap 793.295%                 Prioritize tasks with high expected completion time considering their critical path length
+  # 454 M3    gap 7.346%                   Prioritize tasks based on their longest remaining path (mean) weighted against their expec
+  # 455 M3    gap 4.753%                   Prioritize high expected remaining work while moderately penalizing the task's expected fi
+  # 456 M3    gap 4.968%                   Prioritize tasks with high mean remaining workload while favoring assignments that yield t
+  # 457 M3    gap 5.611%                   Prioritize tasks with high estimated remaining workload while favoring assignments that yi
+  # 458 M3    gap 6.667%                   Prioritize tasks with high mean chain length and favor the machine that minimizes the resu
+  # 459 M3    gap 7.346%                   Prioritize tasks with high mean rank relative to their expected completion time on the mac
+  # 460 M3    gap 4.968%                   Prioritize tasks based on their mean path length (rank_mean) while directly favoring small
+  # 461 M3    gap 793.295%                 Prioritize high expected remaining work while using the machine's current availability rel
+== generation 9: best gap 4.057%  |  population 4.06, 4.20, 4.31, 4.32, 4.41, 4.48, 4.51, 4.52, 4.57, 4.58  |  tokens so far 357053
+generation 10
+  # 462 E1    gap 157.297%                 Prioritize tasks that are critical in the graph (high depth/descendants) and strongly favo
+  # 463 E1    gap 824.970%                 Prioritize tasks based on their resource utilization efficiency (low $p/p_{min
+  # 464 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with the highest density of remaining work per unit of minimum execution 
+  # 465 E1    gap 183.049%                 Prioritize tasks that are most constrained by the machine's availability relative to the t
+  # 466 E1    gap 585.808%                 Prioritize tasks that have a high potential for resource utilization by favoring machines 
+  # 467 E1    gap 11.106%                  Prioritize tasks with high descendant count and favor assignments that yield the minimum p
+  # 468 E1    gap 89.702%                  Prioritize tasks based on their normalized criticality (rank_mean/depth) weighted against 
+  # 469 E1    gap 50.980%                  Prioritize tasks that have a high ratio of remaining workload (rank_mean) to the machine's
+  # 470 E1    gap 200.016%                 Prioritize tasks that offer the highest speedup relative to their potential minimum time, 
+  # 471 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that are critical based on their minimum required processing time relativ
+  # 472 E2    gap 52.079%                  Prioritize tasks that maximize the ratio of remaining workload (rank_mean) to the normaliz
+  # 473 E2    gap 793.295%                 Prioritize tasks that offer the best overall potential completion time across all machines
+  # 474 E2    gap 19.998%                  Prioritize tasks that offer the best ratio of remaining work (mean chain length) to the no
+  # 475 E2    gap 309.767%                 Prioritize tasks that offer the best trade-off between high critical path length and achie
+  # 476 E2    gap 23.114%                  Prioritize tasks with high descendant count relative to their mean processing time, adjust
+  # 477 E2    gap 250.375%                 Prioritize tasks with high descendant count and favor assignments that minimize the ratio 
+  # 478 E2    gap 20.382%                  Prioritize tasks based on their critical path length relative to the minimum possible comp
+  # 479 E2    gap 793.295%                 Prioritize tasks that offer the best ratio of criticality (mean rank) to execution cost on
+  # 480 E2    gap 23.321%                  Prioritize tasks with high criticality (mean rank) weighted by the inverse of the executio
+  # 481 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that offer the best immediate time-cost reduction relative to their overa
+  # 482 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high mean chain length and prioritize a lower normalized execution t
+  # 483 M1    gap 4.635%                   Prioritize tasks with high expected remaining work while moderately favoring lower expecte
+  # 484 M1    gap 4.833%                   Prioritize tasks with high inherent criticality (rank_mean) but decrease the weighting of 
+  # 485 M1    gap 4.718%                   Prioritize tasks with high expected remaining work while using a scaled, less aggressive p
+  # 486 M1    gap 5.863%                   Prioritize tasks with high median chain length and favor machines that result in a finish 
+  # 487 M1    gap 6.714%                   Prioritize tasks with high mean chain length and select the machine that minimizes the fin
+  # 488 M1    gap 5.479%                   Prioritize tasks with high expected remaining work while giving a stronger, non-linear pen
+  # 489 M1    gap 1302.006%                Prioritize tasks with high expected remaining work while more heavily penalizing the inver
+  # 490 M1    gap 21.282%                  Prioritize tasks with high mean chain length weighted by the inverse of the task's executi
+  # 491 M1    gap 7.346%                   Prioritize tasks with high inherent criticality (rank_mean) but use a multiplicative facto
+  # 492 M2    gap 4.440%                   Prioritize tasks with high average chain length and strongly favor the minimum execution t
+  # 493 M2    gap 4.635%                   Prioritize tasks with high inherent criticality (longest mean path) and low immediate cost
+  # 494 M2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with the longest critical path using median time and favor machines where
+  # 495 M2    gap 20.160%                  Prioritize tasks with high descendant count and choose the machine that results in the ear
+  # 496 M2    gap 868.618%                 Prioritize tasks with high immediate execution time on the chosen machine combined with a 
+  # 497 M2    gap 4.277%                   Prioritize tasks with high average chain length and use the minimum possible execution tim
+  # 498 M2    gap 4.672%                   Prioritize tasks with high expected remaining work and strongly favor assignments that res
+  # 499 M2    gap 6.667%                   Prioritize tasks with high remaining workload and strongly favor assignments that yield th
+  # 500 M2    gap 10.833%                  Prioritize tasks with the shortest immediate completion time (eft) while maintaining a mod
+  # 501 M2    gap 4.635%                   Prioritize tasks with high average remaining path length and low immediate processing time
+  # 502 M3    gap 5.611%                   Prioritize tasks with the longest average remaining work while favoring the machine that y
+  # 503 M3    gap 855.717%                 Prioritize tasks with high criticality (rank_mean) while using the ratio of execution time
+  # 504 M3    gap 1263.143%                Prioritize the earliest finish time (eft) to drive immediate progress while slightly penal
+  # 505 M3    gap 6.667%                   Prioritize high criticality (rank_mean) while strongly favoring earlier completion times (
+  # 506 M3    gap 793.295%                 Prioritize tasks with high mean chain length and select the machine that results in the ea
+  # 507 M3    gap 6.667%                   Prioritize tasks with the longest mean chain length while favoring the machine that minimi
+  # 508 M3    gap 4.482%                   Prioritize tasks with the highest average remaining workload while favoring assignments th
+  # 509 M3    gap 4.833%                   Prioritize tasks with high expected remaining work while mildly penalizing the expected fi
+  # 510 M3    gap 90.605%                  Prioritize the task's mean critical path length while heavily penalizing long execution ti
+  # 511 M3    gap 4.827%                   Prioritize tasks with high expected remaining work while minimally penalizing the expected
+== generation 10: best gap 4.057%  |  population 4.06, 4.20, 4.28, 4.31, 4.32, 4.41, 4.44, 4.48, 4.51, 4.52  |  tokens so far 397766
+generation 11
+  # 512 E1    gap 394.833%                 Prioritize tasks that are bottleneck candidates (high relative execution time) and assign 
+  # 513 E1    gap 21.282%                  Prioritize tasks based on the ratio of their mean remaining work to the execution time on 
+  # 514 E1    gap 1257.835%                Prioritize tasks that are inherently short relative to their minimum possible execution ti
+  # 515 E1    gap 793.295%                 Prioritize tasks based on their potential to significantly reduce the maximum completion t
+  # 516 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that offer the best ratio of remaining work (rank\_mean) to the execution
+  # 517 E1    gap 20.648%                  Prioritize tasks that offer the best ratio of remaining work to execution time on the chos
+  # 518 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on their execution time relative to the minimum execution time acro
+  # 519 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with a high ratio of their expected remaining work to their minimum possi
+  # 520 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on their potential impact (descendants) weighted by the ratio of ex
+  # 521 E1    gap 308.061%                 Prioritize tasks that have a high relative execution time compared to their minimum time o
+  # 522 E2    gap 23.153%                  Prioritize tasks with high structural importance (longest path) while heavily favoring ass
+  # 523 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high normalized remaining work (rank\_mean / p\_mean) and strongly f
+  # 524 E2    gap 88.524%                  Prioritize tasks based on their density of remaining work relative to the execution time o
+  # 525 E2    gap 94.168%                  Prioritize tasks that offer the best ratio of remaining work to the time required on the c
+  # 526 E2    gap 90.974%                  Prioritize tasks based on a ratio of remaining critical path length to the normalized exec
+  # 527 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on the ratio of their expected remaining work to the potential time
+  # 528 E2    FAILED (ZeroDivisionError: division by zero) The new heuristic prioritizes tasks based on the ratio of their critical path length to th
+  # 529 E2    gap 7.346%                   Prioritize tasks based on their potential for quick completion relative to their remaining
+  # 530 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on their overall resource requirement relative to the machine's imm
+  # 531 E2    gap 4.588%                   Prioritize tasks based on their criticality (mean rank) weighted against the execution tim
+  # 532 M1    gap 33.278%                  Prioritize tasks with high mean chain length, favor machines offering a relatively short e
+  # 533 M1    gap 5.514%                   Prioritize tasks with a relatively long remaining path weighted by minimum time, balanced 
+  # 534 M1    gap 5.112%                   Prioritize tasks with high median chain length and favor lower estimated finish times, giv
+  # 535 M1    gap 5.611%                   Prioritize tasks with high remaining workload while favoring assignments that yield a fini
+  # 536 M1    gap 4.749%                   Prioritize tasks with high expected remaining work while heavily favoring smaller expected
+  # 537 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high expected remaining work relative to their own mean processing t
+  # 538 M1    gap 14.857%                  Prioritize tasks with high median chain length and favor lower relative execution time whi
+  # 539 M1    gap 1349.044%                Prioritize tasks with high longest chain length weighted by mean time, while strongly favo
+  # 540 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high mean chain length and utilize the minimum possible execution ti
+  # 541 M1    gap 8.871%                   Prioritize tasks with high minimum remaining workload while heavily favoring assignments t
+  # 542 M2    gap 10.211%                  Prioritize tasks with the longest chain based on median time, favoring a better estimate o
+  # 543 M2    gap 23.603%                  Prioritize tasks with high resource utilization on the chosen machine while strongly favor
+  # 544 M2    gap 12.434%                  Prioritize tasks with the shortest expected completion time while still factoring in a mod
+  # 545 M2    gap 4.395%                   Prioritize tasks with high shortest path length (mean) and favor machines that result in a
+  # 546 M2    gap 20.160%                  Prioritize tasks with high descendant count and favor machines that result in the earliest
+  # 547 M2    gap 4.600%                   Prioritize tasks with high expected remaining work while strongly favoring machines that y
+  # 548 M2    gap 9.301%                   Prioritize tasks with the shortest expected completion time while moderately considering t
+  # 549 M2    gap 5.004%                   Prioritize tasks with high mean chain length and strongly favor the shortest execution tim
+  # 550 M2    gap 4.322%                   Prioritize tasks with the longest mean chain length and favor machines that yield a signif
+  # 551 M2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with the longest path based on median time and favor machines where the t
+  # 552 M3    gap 858.298%                 Prioritize tasks with high average remaining work and utilize the actual execution time on
+  # 553 M3    gap 793.295%                 Prioritize tasks with high expected remaining work, slightly modulated by the task's expec
+  # 554 M3    gap 5.049%                   Prioritize tasks with high average chain length while favoring the earliest finish time co
+  # 555 M3    gap 4.968%                   Prioritize tasks with high remaining workload, weighted by a factor, and slightly penalize
+  # 556 M3    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on their longest remaining path (mean) relative to their execution 
+  # 557 M3    gap 4.892%                   Prioritize high expected remaining work while minimizing the immediate expected finish tim
+  # 558 M3    gap 793.295%                 Prioritize tasks with high mean chain length and select the machine that minimizes the res
+  # 559 M3    gap 4.440%                   Prioritize tasks with high average chain length and favor the minimum execution time on th
+  # 560 M3    gap 4.968%                   Prioritize tasks with the longest expected remaining work using the mean rank, balanced by
+  # 561 M3    gap 793.295%                 Prioritize tasks with high mean rank and select the machine that minimizes the earliest fi
+== generation 11: best gap 4.057%  |  population 4.06, 4.20, 4.28, 4.31, 4.32, 4.39, 4.41, 4.44, 4.48, 4.51  |  tokens so far 438642
+generation 12
+  # 562 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with the highest potential resource utilization relative to their minimum
+  # 563 E1    gap 67.219%                  Prioritize tasks based on their potential machine utilization efficiency relative to their
+  # 564 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on their critical path length while heavily favoring assignments th
+  # 565 E1    gap 479.268%                 Prioritize tasks with high structural importance (descendants) weighted against the ratio 
+  # 566 E1    gap 101.098%                 Prioritize tasks that are highly constrained (low $\text{npred
+  # 567 E1    gap 17.941%                  Prioritize tasks with high remaining workload relative to their shortest possible executio
+  # 568 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that have high descendant counts and favor machines that minimize the rat
+  # 569 E1    gap 23.149%                  Prioritize tasks with high successor count and low normalized execution time on the chosen
+  # 570 E1    gap 146.451%                 Prioritize tasks with high structural importance (descendants) and favor assignments that 
+  # 571 E1    gap 22.004%                  Prioritize tasks with high overall structural importance relative to their execution cost 
+  # 572 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks by the ratio of expected remaining work to the task's minimum execution t
+  # 573 E2    FAILED (ZeroDivisionError: division by zero) The new heuristic prioritizes tasks based on the inverse of the expected finish time relat
+  # 574 E2    gap 622.841%                 Prioritize tasks based on their readiness relative to the machine's availability, weighted
+  # 575 E2    gap 793.295%                 Prioritize tasks based on the ratio of their longest remaining path (mean) to their execut
+  # 576 E2    FAILED (ZeroDivisionError: division by zero) The new heuristic prioritizes tasks based on their potential resource utilization ratio ($
+  # 577 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on the ratio of their expected remaining work to the execution time
+  # 578 E2    gap 586.442%                 Prioritize tasks with high structural importance (rank_mean) scaled by the machine's relat
+  # 579 E2    gap 847.657%                 Prioritize tasks with high criticality (mean rank) combined with a normalized execution ti
+  # 580 E2    gap 90.815%                  The new heuristic prioritizes tasks based on a normalized urgency (rank) scaled by the inv
+  # 581 E2    gap 5.873%                   Prioritize tasks based on their criticality (rank_mean) weighted against the relative effi
+  # 582 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high mean chain length while maximizing the ratio of early start tim
+  # 583 M1    gap 6.667%                   Prioritize tasks with high mean chain length while preferring the machine that minimizes t
+  # 584 M1    gap 4.727%                   Prioritize tasks with high median chain length and use a weighted combination of minimum e
+  # 585 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high mean chain length while balancing the machine execution time ag
+  # 586 M1    gap 5.272%                   Prioritize tasks with high median chain length and moderately favor the minimum execution 
+  # 587 M1    gap 4.896%                   Prioritize tasks with high expected remaining work while slightly favoring machines that r
+  # 588 M1    gap 5.001%                   Prioritize tasks with high minimum workload while favoring assignments that yield a more c
+  # 589 M1    gap 4.937%                   Prioritize tasks with high longest path length (mean) and favor machines that result in a 
+  # 590 M1    gap 5.127%                   Prioritize tasks with high chain length while aiming for a balanced completion time by usi
+  # 591 M1    gap 138.255%                 Prioritize tasks with high median chain length and utilize the shortest execution time on 
+  # 592 M2    gap 5.161%                   Prioritize tasks with high minimum path length and strongly favor machines that result in 
+  # 593 M2    FAILED (KeyError: 'rank_max') Prioritize tasks with maximum potential execution time, favoring the machine with the fast
+  # 594 M2    gap 4.322%                   Prioritize tasks with high longest path estimates and maximize the utilization of the mach
+  # 595 M2    gap 4.405%                   Prioritize tasks with high expected remaining work while heavily favoring assignments that
+  # 596 M2    gap 4.730%                   Prioritize tasks with high mean chain length and heavily prioritize the minimum execution 
+  # 597 M2    gap 333.211%                 Prioritize tasks with high mean chain length and prioritize the average execution time on 
+  # 598 M2    gap 4.895%                   Prioritize tasks with high shortest path length (mean) and strongly favor machines that re
+  # 599 M2    gap 9.596%                   Prioritize tasks with high descendant count and minimize the execution time on the chosen 
+  # 600 M2    gap 793.295%                 Prioritize tasks with the longest mean chain length and strongly favor the fastest executi
+  # 601 M2    gap 13.351%                  Prioritize tasks with shortest expected finish times on the chosen machine while moderatel
+  # 602 M3    gap 10.253%                  Prioritize tasks with high mean chain length while strongly minimizing the estimated finis
+  # 603 M3    gap 4.057%                   Prioritize tasks with high average chain length and minimize the execution time on the cho
+  # 604 M3    gap 6.667%                   Prioritize tasks with long average chain length while primarily minimizing the estimated f
+  # 605 M3    FAILED (SyntaxError: invalid syntax (<candidate>, line 3)) Prioritize tasks with high expected remaining work and penalize the expected finish time u
+  # 606 M3    gap 793.295%                 Prioritize tasks with longest mean chain length while favoring the shortest execution time
+  # 607 M3    gap 5.270%                   Prioritize tasks with the longest mean chain length and select the machine that yields the
+  # 608 M3    gap 10.253%                  Prioritize tasks with high average chain length while strongly favoring the minimum estima
+  # 609 M3    gap 7.346%                   Prioritize tasks by their longest remaining path (mean) while using the minimum possible c
+  # 610 M3    gap 4.948%                   Prioritize tasks with high expected remaining work while minimally penalizing the expected
+  # 611 M3    gap 6.667%                   Prioritize tasks with high mean chain length while minimizing the estimated finish time, w
+== generation 12: best gap 4.057%  |  population 4.06, 4.20, 4.28, 4.31, 4.32, 4.39, 4.41, 4.44, 4.48, 4.51  |  tokens so far 479836
+generation 13
+  # 612 E1    gap 1319.954%                Prioritize tasks based on their urgency derived from the slack (ready time minus earliest 
+  # 613 E1    gap 94.168%                  Prioritize tasks based on the ratio of their critical path length to their execution time 
+  # 614 E1    gap 94.168%                  Prioritize tasks that offer the best ratio of remaining critical path work to the executio
+  # 615 E1    gap 852.748%                 Prioritize tasks with high criticality (based on longest path) and favor machines that off
+  # 616 E1    gap 384.187%                 Prioritize tasks that are critical in the graph (high rank/depth) while favoring machines 
+  # 617 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks that are critical based on their longest path (using median time) and fav
+  # 618 E1    gap 51.763%                  Prioritize tasks with the highest probability of contributing to the critical path (using 
+  # 619 E1    gap 1097.283%                Prioritize tasks that are critical (high rank_min) while favoring machines that yield the 
+  # 620 E1    gap 853.320%                 Prioritize tasks based on their criticality (longest path) and select the machine that min
+  # 621 E1    gap 94.375%                  Prioritize tasks with high descendant count and select machines that offer the smallest re
+  # 622 E2    gap 15.840%                  Prioritize tasks that offer the best ratio of remaining work (rank_mean) to the expected d
+  # 623 E2    gap 13.995%                  Prioritize tasks that offer the best ratio of estimated remaining work (mean rank) to the 
+  # 624 E2    gap 136.428%                 Prioritize tasks with high descendant count combined with a balance between execution time
+  # 625 E2    gap 24.055%                  The new heuristic prioritizes tasks based on their potential time advantage across all mac
+  # 626 E2    gap 322.880%                 Prioritize tasks based on their structural importance (rank\_mean) but use the ratio of ex
+  # 627 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on the ratio of their mean chain length to their minimum execution 
+  # 628 E2    gap 94.168%                  Prioritize tasks based on the ratio of their longest path mean to the execution time on th
+  # 629 E2    gap 805.490%                 Prioritize tasks with high descendant count combined with a normalized inverse of the exec
+  # 630 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high descendant count weighted by their average path length and heav
+  # 631 E2    gap 794.200%                 Prioritize tasks with high descendant count weighted by their shortest execution time rati
+  # 632 M1    gap 4.523%                   Prioritize tasks with high longest path length (mean) and heavily favor machines that resu
+  # 633 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with a high critical path length relative to their expected execution tim
+  # 634 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high mean remaining path, balancing this against the ratio of execut
+  # 635 M1    gap 4.489%                   Prioritize tasks with high shortest path length (mean) and favor machines that result in a
+  # 636 M1    gap 3.876%                   Prioritize tasks with high average chain length and use the minimum possible execution tim
+  # 637 M1    gap 353.473%                 Prioritize tasks with high median chain length while favoring the actual execution time on
+  # 638 M1    gap 157.555%                 Prioritize tasks with high average chain length and favor machines that minimize the diffe
+  # 639 M1    gap 4.557%                   Prioritize tasks with high expected remaining work, but use the minimum execution time rat
+  # 640 M1    gap 5.050%                   Prioritize tasks with high expected remaining work while more heavily favoring lower expec
+  # 641 M1    gap 11.864%                  Prioritize tasks with high average chain length while heavily penalizing the estimated fin
+  # 642 M2    gap 9.596%                   Prioritize tasks with high successor count and minimize the execution time on the chosen m
+  # 643 M2    gap 8.639%                   Prioritize tasks with high minimum execution time and heavily emphasize minimizing the est
+  # 644 M2    gap 5.161%                   Prioritize tasks with high minimum path length and strongly favor machines that result in 
+  # 645 M2    gap 7.158%                   Prioritize tasks with high mean chain length and heavily favor the resulting finish time w
+  # 646 M2    gap 547.961%                 Prioritize tasks with earliest earliest start time on the best machine while penalizing hi
+  # 647 M2    gap 18.172%                  Prioritize tasks with the shortest processing time on the specific machine while heavily f
+  # 648 M2    gap 7.051%                   Prioritize tasks with the longest path based on their median time and choose the machine t
+  # 649 M2    gap 6.667%                   Prioritize tasks with long chains and minimize the latest possible finish time on the sele
+  # 650 M2    gap 31.146%                  Prioritize tasks with the shortest expected finish time on the chosen machine while modera
+  # 651 M2    gap 5.161%                   Prioritize tasks with high minimum path length and strongly favor machines that result in 
+  # 652 M3    gap 793.295%                 Prioritize tasks with the longest mean chain length and select the machine that yields the
+  # 653 M3    gap 7.346%                   Prioritize tasks with high expected remaining work relative to their expected finish time 
+  # 654 M3    gap 4.948%                   Prioritize tasks based on expected remaining work (rank_mean) while slightly favoring smal
+  # 655 M3    gap 4.861%                   Prioritize tasks with high mean rank while minimizing the expected finish time, heavily we
+  # 656 M3    gap 5.004%                   Prioritize tasks based on the mean rank and shortest execution time on the chosen machine,
+  # 657 M3    gap 165.345%                 Prioritize tasks with high expected remaining work while using the machine's availability 
+  # 658 M3    gap 6.667%                   Prioritize tasks by mean remaining work while favoring lower expected finish times.
+  # 659 M3    gap 5.611%                   Prioritize tasks with high average chain length and assign them to the machine that minimi
+  # 660 M3    gap 793.295%                 Prioritize tasks with high expected remaining work while using the ratio of expected proce
+  # 661 M3    gap 4.200%                   Prioritize tasks with high mean chain length while favoring the minimum execution time on 
+== generation 13: best gap 3.876%  |  population 3.88, 4.06, 4.20, 4.28, 4.31, 4.32, 4.39, 4.41, 4.44, 4.48  |  tokens so far 521194
+generation 14
+  # 662 E1    gap 93.270%                  Prioritize tasks that are critical in the graph (high depth and descendants) and favor the
+  # 663 E1    gap 90.007%                  Prioritize tasks with high descendant count and favor assignments that minimize the relati
+  # 664 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on the ratio of their critical path length to the shortest possible
+  # 665 E1    gap 7.715%                   Prioritize tasks that are critical (high rank_mean) and favor machines that minimize the s
+  # 666 E1    gap 90.007%                  Prioritize tasks that are critical to the graph structure (high descendant count) and favo
+  # 667 E1    gap 4.871%                   Prioritize tasks with high descendant count weighted by their critical path rank, while st
+  # 668 E1    gap 100.290%                 Prioritize tasks based on their structural urgency (depth) combined with a relative perfor
+  # 669 E1    gap 91.032%                  Prioritize tasks with high descendant count and favor machines that yield a low relative e
+  # 670 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on their overall time variability relative to their rank, while str
+  # 671 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high descendant count and favor machines that minimize the ratio of 
+  # 672 E2    gap 7.346%                   Prioritize tasks based on the ratio of their remaining workload (mean rank) to the expecte
+  # 673 E2    gap 586.460%                 Prioritize tasks based on their relative execution time on the chosen machine against the 
+  # 674 E2    gap 14.813%                  Prioritize tasks with the highest potential impact on the critical path (rank\_mean) relat
+  # 675 E2    gap 144.040%                 Prioritize tasks that offer the best potential speedup (ratio of mean rank to execution ti
+  # 676 E2    gap 21.678%                  Prioritize tasks based on their criticality (rank) relative to the expected utilization be
+  # 677 E2    gap 94.168%                  Prioritize tasks that offer the best ratio of remaining work (using mean chain length) to 
+  # 678 E2    gap 23.123%                  The new heuristic prioritizes tasks based on their structural importance (longest path) wh
+  # 679 E2    gap 49.489%                  Prioritize tasks based on their relative execution time on the chosen machine and favor th
+  # 680 E2    gap 23.603%                  eft
+  # 681 E2    gap 859.690%                 Prioritize tasks with high relative execution time on the chosen machine, balanced against
+  # 682 M1    gap 4.541%                   Prioritize tasks with high shortest path length (mean) and favor machines that result in a
+  # 683 M1    gap 4.723%                   Prioritize tasks with high median chain length and aim for the earliest feasible finish ti
+  # 684 M1    gap 5.894%                   Prioritize tasks with high minimum required workload while favoring assignments that yield
+  # 685 M1    gap 5.640%                   Prioritize tasks with high expected remaining work while proportionally penalizing the nor
+  # 686 M1    gap 5.611%                   Prioritize tasks with high mean chain length while favoring the execution time on the mach
+  # 687 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high minimum chain length and maximize the ratio of task time to its
+  # 688 M1    gap 793.295%                 Prioritize tasks with high mean chain length and utilize the minimum possible execution ti
+  # 689 M1    gap 5.611%                   Prioritize tasks with high average chain length while moderately favoring the best estimat
+  # 690 M1    gap 5.611%                   Prioritize tasks with high mean chain length while favoring a completion time closer to th
+  # 691 M1    gap 9.790%                   Prioritize tasks with high median chain length and strongly emphasize minimizing the actua
+  # 692 M2    gap 20.160%                  Prioritize tasks with high descendant count and select the machine that minimizes the resu
+  # 693 M2    FAILED (KeyError: 'rank_max') Prioritize tasks with high maximum execution time and prioritize placing them on the machi
+  # 694 M2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high expected completion time considering the machine's current load
+  # 695 M2    gap 6.814%                   Prioritize tasks with high average chain length and emphasize minimizing the estimated fin
+  # 696 M2    gap 5.694%                   Prioritize tasks with high minimum chain length and strongly favor the actual execution ti
+  # 697 M2    gap 4.950%                   Prioritize tasks with high mean chain length and prioritize the maximum execution time on 
+  # 698 M2    gap 5.642%                   Prioritize tasks with high mean chain length and strongly favor the absolute minimum execu
+  # 699 M2    gap 10.105%                  Prioritize tasks with high minimum chain length while strongly favoring the shortest possi
+  # 700 M2    gap 7.552%                   Prioritize tasks with maximum execution time on the chosen machine while heavily penalizin
+  # 701 M2    gap 8.639%                   Prioritize tasks with high minimum chain length and emphasize minimizing the actual finish
+  # 702 M3    gap 793.295%                 Prioritize tasks with high mean chain length and select the machine that yields the minimu
+  # 703 M3    gap 4.968%                   Prioritize tasks with the longest expected remaining work while mildly penalizing the expe
+  # 704 M3    gap 4.482%                   Prioritize tasks by their mean chain length while favoring a lower overall estimated finis
+  # 705 M3    gap 4.692%                   Prioritize tasks with high mean chain length, favoring shorter execution times while prima
+  # 706 M3    gap 6.667%                   Prioritize tasks with high mean chain length and select the machine that minimizes the est
+  # 707 M3    gap 4.482%                   Prioritize tasks with high average chain length while favoring the earliest possible finis
+  # 708 M3    gap 6.667%                   Prioritize tasks by their mean chain length and select the machine that minimizes the esti
+  # 709 M3    gap 4.843%                   Prioritize tasks with high expected remaining work, adjusted by a slight penalty on the re
+  # 710 M3    gap 4.440%                   Prioritize tasks based on their mean chain length, favor the machine with the minimum exec
+  # 711 M3    gap 793.295%                 Prioritize tasks with higher mean rank while inversely weighting immediate execution time 
+== generation 14: best gap 3.876%  |  population 3.88, 4.06, 4.20, 4.28, 4.31, 4.32, 4.39, 4.41, 4.44, 4.48  |  tokens so far 562489
+generation 15
+  # 712 E1    gap 793.295%                 Prioritize tasks with high descendant count and assign them to machines that offer the bes
+  # 713 E1    gap 793.295%                 Prioritize tasks with high descendant count while favoring machines that yield the minimum
+  # 714 E1    gap 20.160%                  Prioritize tasks with high descendant count and select the machine that minimizes the pote
+  # 715 E1    gap 10.691%                  Prioritize tasks with high structural importance (descendants) while strongly favoring the
+  # 716 E1    gap 24.804%                  Prioritize tasks with high descendant count and favor machines that minimize the execution
+  # 717 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with the highest potential processing intensity relative to the minimum p
+  # 718 E1    gap 1199.197%                Prioritize tasks based on their relative execution time ($p\_rel$) on the chosen machine, 
+  # 719 E1    gap 139.192%                 Prioritize tasks with high structural importance (descendants) and select the machine that
+  # 720 E1    gap 126.001%                 Prioritize tasks based on their execution time relative to their minimum possible time, we
+  # 721 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on their overall criticality (deepest path/highest rank) and select
+  # 722 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with the highest density of remaining work per execution time and favor a
+  # 723 E2    gap 90.974%                  The new heuristic prioritizes tasks that offer the best ratio of remaining workload to the
+  # 724 E2    gap 4.482%                   Prioritize tasks based on their urgency (longest path mean) and select the machine that mi
+  # 725 E2    gap 17.072%                  Prioritize tasks with high descendant count and favor the machine that minimizes the makes
+  # 726 E2    FAILED (SyntaxError: invalid syntax (<candidate>, line 3)) Prioritize tasks based on the ratio of remaining work (mean rank) to the execution time on
+  # 727 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on the ratio of their average remaining work to the machine's proce
+  # 728 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with the highest ratio of average remaining work to the execution time on
+  # 729 E2    gap 856.393%                 Prioritize tasks based on their critical path length (using median time) while minimizing 
+  # 730 E2    gap 10.223%                  Prioritize tasks with high descendant count weighted by their rank mean, modulated by the 
+  # 731 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on the ratio of their mean chain length to their minimum execution 
+  # 732 M1    gap 5.586%                   Prioritize tasks with high required minimum workload while favoring assignments that yield
+  # 733 M1    gap 5.185%                   Prioritize tasks with the longest minimum chain length and minimize the estimated finish t
+  # 734 M1    gap 9.326%                   Prioritize tasks with high chain length while maximizing the potential speedup by favoring
+  # 735 M1    gap 1213.415%                Prioritize tasks with the minimum possible execution time on the chosen machine while stro
+  # 736 M1    gap 5.183%                   Prioritize tasks with high median chain length while aggressively minimizing the earliest 
+  # 737 M1    gap 5.094%                   Prioritize tasks with high median chain length and use a modified weighting that balances 
+  # 738 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high chain length using the median time and favor the machine that r
+  # 739 M1    gap 21.407%                  Prioritize tasks with a high remaining path (using median) relative to their expected exec
+  # 740 M1    gap 7.902%                   Prioritize tasks with high median chain length and use the expected execution time on the 
+  # 741 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high median chain length and emphasize minimizing the normalized est
+  # 742 M2    gap 4.733%                   Prioritize tasks with the longest critical path (mean time) and favor the machine that res
+  # 743 M2    gap 4.895%                   Prioritize tasks with high shortest path length (mean) and strongly favor machines that re
+  # 744 M2    gap 5.332%                   Prioritize tasks with high immediate cost on the specific machine, weighted against the cr
+  # 745 M2    gap 6.667%                   Prioritize tasks with high remaining workload while strictly favoring the earliest finish 
+  # 746 M2    gap 5.004%                   Prioritize tasks with high mean chain length and prioritize the machine offering the short
+  # 747 M2    gap 18.488%                  Prioritize tasks with high minimum execution time and strongly favor the earliest possible
+  # 748 M2    gap 13.351%                  Prioritize tasks with a shorter longest remaining path weighted against the immediate cost
+  # 749 M2    gap 1239.311%                Prioritize tasks with maximum completion time (EST + p) and use a higher weight for execut
+  # 750 M2    gap 6.333%                   Prioritize tasks with high average chain length and heavily emphasize minimizing the estim
+  # 751 M2    gap 12.601%                  Prioritize tasks with high minimum execution time and use the estimated finish time on the
+  # 752 M3    gap 6.893%                   Prioritize tasks based on their mean chain length and favor the minimum execution time on 
+  # 753 M3    gap 6.667%                   Prioritize tasks with high mean chain length and favor the earliest possible finish time o
+  # 754 M3    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high mean chain length weighted against a lower normalized execution
+  # 755 M3    gap 4.469%                   Prioritize tasks with high average chain length and select the machine that minimizes the 
+  # 756 M3    gap 6.667%                   Prioritize tasks with the longest average remaining work and select the machine that minim
+  # 757 M3    gap 793.295%                 Prioritize tasks with long average remaining work and use the shortest possible execution 
+  # 758 M3    gap 793.295%                 Prioritize tasks with high mean chain length while favoring the minimum execution time on 
+  # 759 M3    gap 6.667%                   Prioritize tasks based on their expected remaining work while strongly penalizing the resu
+  # 760 M3    gap 6.667%                   Prioritize tasks with the longest critical path and choose the machine that minimizes the 
+  # 761 M3    gap 5.004%                   Prioritize tasks with the highest mean rank and the minimum execution time, while minimall
+== generation 15: best gap 3.876%  |  population 3.88, 4.06, 4.20, 4.28, 4.31, 4.32, 4.39, 4.41, 4.44, 4.47  |  tokens so far 603817
+generation 16
+  # 762 E1    gap 127.988%                 Prioritize tasks with high descendant count combined with the ratio of execution time to t
+  # 763 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high structural importance (descendants) and select the machine that
+  # 764 E1    gap 793.295%                 Prioritize tasks that maximize the ratio of criticality (longest remaining path mean) to t
+  # 765 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high criticality (descendants) and select the machine that minimizes
+  # 766 E1    gap 20.532%                  Prioritize tasks with high criticality (descendants) combined with the relative execution 
+  # 767 E1    gap 408.390%                 Prioritize tasks with high descendant count, favoring machines that minimize the ratio of 
+  # 768 E1    gap 245.823%                 Prioritize tasks based on their criticality (descendants/depth) and favor machines that mi
+  # 769 E1    gap 52.079%                  Prioritize tasks that offer the best ratio of critical path length to normalized processin
+  # 770 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on their execution time relative to the shortest possible time acro
+  # 771 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on their slack relative to the critical path derived from the media
+  # 772 E2    gap 335.206%                 Prioritize tasks based on their relative execution cost and schedule them to minimize the 
+  # 773 E2    gap 7.346%                   Prioritize tasks based on the ratio of their mean remaining chain length to their expected
+  # 774 E2    FAILED (ZeroDivisionError: division by zero) The new heuristic prioritizes tasks based on their potential critical path length relative
+  # 775 E2    gap 52.079%                  Prioritize tasks that offer the best ratio of criticality (rank_mean) to execution cost (p
+  # 776 E2    gap 93.390%                  Prioritize tasks based on their potential slack (difference between rank\_mean and the wei
+  # 777 E2    gap 21.787%                  Prioritize tasks that maximize the ratio of remaining work (ranked by mean) to the expecte
+  # 778 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high descendant count and select the machine that minimizes the rati
+  # 779 E2    gap 82.597%                  Prioritize tasks with high descendant count combined with a normalized execution time on t
+  # 780 E2    gap 52.079%                  Prioritize tasks based on their readiness combined with the relative efficiency of the mac
+  # 781 E2    gap 453.137%                 Prioritize tasks based on their criticality (rank_mean) scaled by their relative execution
+  # 782 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high median chain length and use a balanced penalty on estimated fin
+  # 783 M1    gap 6.667%                   Prioritize tasks with high average chain length and favor machines that result in a lower 
+  # 784 M1    gap 4.038%                   Prioritize tasks with high median chain length while balancing execution time and the earl
+  # 785 M1    gap 793.295%                 Prioritize tasks with high average chain length while favoring machines that result in the
+  # 786 M1    gap 11.603%                  Prioritize tasks with high minimum chain length and heavily emphasize the minimum estimate
+  # 787 M1    gap 5.057%                   Prioritize tasks with high minimum chain length and favor a good balance between execution
+  # 788 M1    gap 4.839%                   Prioritize tasks with high median chain length and strongly favor the minimum possible com
+  # 789 M1    gap 853.592%                 Prioritize tasks with high chain length while favoring shorter execution times relative to
+  # 790 M1    gap 4.957%                   Prioritize tasks with high median chain length and select the machine that minimizes the e
+  # 791 M1    gap 4.397%                   Prioritize tasks with high average chain length and balance the minimum execution time wit
+  # 792 M2    gap 9.614%                   Prioritize tasks with maximum execution time on the chosen machine and heavily emphasize m
+  # 793 M2    gap 4.408%                   Prioritize tasks with high minimum execution time and strongly favor the earliest finish t
+  # 794 M2    gap 10.769%                  Prioritize tasks with the minimum expected finish time on the chosen machine, while still 
+  # 795 M2    gap 20.160%                  Prioritize tasks with high descendant count and minimize the resulting earliest finish tim
+  # 796 M2    gap 4.200%                   Prioritize tasks with the longest chain length (mean) and the shortest execution time on t
+  # 797 M2    gap 4.057%                   Prioritize tasks with high downstream work potential while favoring machines that minimize
+  # 798 M2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with the minimum expected execution time while lightly rewarding high rem
+  # 799 M2    gap 5.057%                   Prioritize tasks with a shorter remaining path using minimum time, favoring machines that 
+  # 800 M2    gap 5.499%                   Prioritize tasks with minimum expected time and strongly favor lower expected finish times
+  # 801 M2    gap 4.482%                   Prioritize tasks with high mean chain length and choose the machine that minimizes the est
+  # 802 M3    gap 6.667%                   Prioritize tasks with the longest expected critical path and select the machine that minim
+  # 803 M3    gap 793.295%                 Prioritize tasks with the longest expected remaining work and select the machine that yiel
+  # 804 M3    gap 3.876%                   Prioritize tasks with high average chain length and favor the minimum execution time while
+  # 805 M3    gap 5.611%                   Prioritize tasks with high mean chain length and use the earliest possible finish time on 
+  # 806 M3    gap 4.170%                   Prioritize tasks with high average chain length and favor the minimum execution time on th
+  # 807 M3    gap 4.727%                   Prioritize tasks with high average chain length while slightly favoring lower execution ti
+  # 808 M3    gap 6.667%                   Prioritize tasks with high mean chain length and select the machine that yields the earlie
+  # 809 M3    gap 6.667%                   Prioritize tasks with the longest mean chain length while favoring the lowest estimated fi
+  # 810 M3    gap 4.482%                   Prioritize tasks by their average rank and select the machine that minimizes the earliest 
+  # 811 M3    gap 6.667%                   Prioritize tasks with longest expected remaining work while favoring the earliest possible
+== generation 16: best gap 3.876%  |  population 3.88, 4.04, 4.06, 4.06, 4.17, 4.20, 4.28, 4.31, 4.32, 4.39  |  tokens so far 645318
+generation 17
+  # 812 E1    gap 23.063%                  Prioritize tasks based on their criticality (mean rank) scaled by the inverse of the execu
+  # 813 E1    gap 325.765%                 Prioritize tasks with high structural complexity (descendants) and favor machines that max
+  # 814 E1    gap 82.597%                  Prioritize tasks based on the overall complexity of the remaining work (descendants) weigh
+  # 815 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with the longest critical path (mean rank) relative to their execution ti
+  # 816 E1    gap 793.295%                 Prioritize tasks with high criticality (descendants and depth) while aggressively favoring
+  # 817 E1    gap 19.988%                  Prioritize tasks that have a high density of downstream work relative to their average exe
+  # 818 E1    gap 20.806%                  Prioritize tasks with high total downstream work potential and heavily favor the machine t
+  # 819 E1    gap 63.790%                  Prioritize tasks with high total descendant workload and favor machines that offer the bes
+  # 820 E1    gap 21.112%                  Prioritize tasks based on the ratio of their mean chain length to their minimum execution 
+  # 821 E1    gap 10.658%                  Prioritize tasks with high overall structural importance (descendants) combined with the m
+  # 822 E2    gap 9.813%                   Prioritize tasks based on their overall structural importance (descendants) and favor mach
+  # 823 E2    gap 20.880%                  Prioritize tasks with high descendant count, favoring machines that offer a low relative e
+  # 824 E2    gap 10.215%                  Prioritize tasks based on their longest path (rank\_mean) while strongly favoring machines
+  # 825 E2    gap 793.295%                 Prioritize tasks with high descendant count and use a weighted combination of task executi
+  # 826 E2    gap 17.398%                  Prioritize tasks based on their overall processing requirements relative to machine capabi
+  # 827 E2    gap 24.957%                  Prioritize tasks that have a high ratio of chain length importance to their normalized exe
+  # 828 E2    gap 127.500%                 Prioritize tasks with high descendant count and favor the shortest relative execution time
+  # 829 E2    gap 334.313%                 Prioritize tasks based on their relative shortest execution time across all machines weigh
+  # 830 E2    gap 4.580%                   Prioritize tasks with high criticality (e.g., rank_mean) but heavily penalize the potentia
+  # 831 E2    gap 91.012%                  Prioritize tasks based on their potential critical path impact (rank_med) while minimizing
+  # 832 M1    gap 3.876%                   Prioritize tasks with high mean chain length while rewarding smaller execution times and e
+  # 833 M1    gap 4.200%                   Prioritize tasks with high mean chain length, favoring lower execution time on the assigne
+  # 834 M1    gap 793.295%                 Prioritize tasks with high shortest path length (mean) and strongly favor machines that re
+  # 835 M1    gap 165.689%                 Prioritize tasks with high mean chain length while favoring execution time on the machine 
+  # 836 M1    gap 793.295%                 Prioritize tasks with high longest path length (mean) and strongly favor machines that yie
+  # 837 M1    gap 5.105%                   Prioritize tasks with the median chain length and aim to minimize the actual estimated fin
+  # 838 M1    gap 11.099%                  Prioritize tasks with high median chain length and favor the machine with the smallest exe
+  # 839 M1    FAILED (TypeError: 'float' object is not subscriptable) Prioritize tasks with high median chain length and use the estimated finish time on the ch
+  # 840 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high median chain length and favor the machine that minimizes the ra
+  # 841 M1    gap 92.459%                  Prioritize tasks with high average chain length while preferring a smaller execution time 
+  # 842 M2    gap 793.295%                 Prioritize tasks with a lower immediate cost on the machine while heavily emphasizing the 
+  # 843 M2    gap 5.611%                   Prioritize tasks with high average chain length while strongly favoring the overall earlie
+  # 844 M2    gap 6.667%                   Prioritize tasks with long dependency chains and aim for the earliest possible finish time
+  # 845 M2    gap 13.363%                  Prioritize tasks with the shortest path to the end using median time, while strongly empha
+  # 846 M2    gap 187.851%                 Prioritize tasks with high descendant count and utilize the expected execution time on the
+  # 847 M2    gap 91.195%                  Prioritize tasks with high mean chain length combined with minimizing the task execution t
+  # 848 M2    gap 4.057%                   Prioritize tasks with high mean chain length while penalizing large execution times and fa
+  # 849 M2    gap 4.255%                   Prioritize tasks with high minimum execution time and favor a smaller earliest finish time
+  # 850 M2    gap 6.363%                   Prioritize tasks with high minimum chain length and strongly favor the minimum execution t
+  # 851 M2    gap 4.200%                   Prioritize tasks with high mean chain length and favor shorter execution times on the chos
+  # 852 M3    gap 6.667%                   Prioritize tasks based on their mean remaining work, favoring the earliest possible finish
+  # 853 M3    gap 860.476%                 Prioritize tasks with high mean chain length and favor the shortest execution time on the 
+  # 854 M3    gap 4.128%                   Prioritize tasks with high mean chain length, favor the minimum execution time, and use th
+  # 855 M3    gap 11.379%                  Prioritize high median chain length while favoring tasks with low execution time and earli
+  # 856 M3    gap 6.667%                   Prioritize tasks with high mean chain length while favoring machines that result in the ea
+  # 857 M3    gap 7.346%                   Prioritize tasks with high mean chain length and choose the machine that minimizes the est
+  # 858 M3    gap 339.202%                 Prioritize tasks with high mean chain length, favoring machines that result in a low actua
+  # 859 M3    gap 6.667%                   Prioritize tasks with high mean chain length while minimizing the estimated finish time.
+  # 860 M3    gap 5.611%                   Prioritize tasks with high mean chain length and favor the earliest possible finish time c
+  # 861 M3    FAILED (SyntaxError: invalid syntax (<candidate>, line 3)) Prioritize tasks with high mean downstream work potential while strictly favoring the mach
+== generation 17: best gap 3.876%  |  population 3.88, 3.88, 4.04, 4.06, 4.06, 4.06, 4.13, 4.17, 4.20, 4.20  |  tokens so far 686214
+generation 18
+  # 862 E1    gap 66.154%                  Prioritize tasks based on their average execution time across all machines relative to the
+  # 863 E1    gap 16.337%                  Prioritize tasks with high successor count and high minimum execution time while strongly 
+  # 864 E1    gap 310.415%                 Prioritize tasks with high descendant count and favor the fastest execution time relative 
+  # 865 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on the ratio of mean chain length to execution time, heavily favori
+  # 866 E1    gap 20.382%                  Prioritize tasks based on the ratio of their estimated remaining work (mean chain length) 
+  # 867 E1    gap 21.304%                  Prioritize tasks with the longest remaining path (rank_max if available, otherwise rank_me
+  # 868 E1    gap 851.160%                 Prioritize tasks that are critical in the graph (high rank_mean) but strongly favor the ma
+  # 869 E1    gap 19.573%                  Prioritize tasks with high criticality (descendants) and favor machines that yield the ear
+  # 870 E1    gap 793.295%                 Prioritize tasks that are critical to the overall schedule completion by balancing their l
+  # 871 E1    gap 21.110%                  Prioritize tasks with high structural importance (descendants) and low relative execution 
+  # 872 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high downstream work potential, weighted by the inverse of the expec
+  # 873 E2    gap 165.445%                 Prioritize tasks with high structural importance (e.g., longest path/descendants) and favo
+  # 874 E2    gap 35.068%                  Prioritize tasks with high descendant count and penalize the execution time relative to th
+  # 875 E2    gap 12.188%                  Prioritize tasks based on their maximum potential execution time and aggressively minimize
+  # 876 E2    gap 17.398%                  Prioritize tasks based on their potential impact on the critical path relative to the cost
+  # 877 E2    gap 21.678%                  Prioritize tasks with the highest proportion of their minimum execution time to the longes
+  # 878 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on the ratio of their mean chain length to the task's minimum execu
+  # 879 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on the longest path metric (rank_max if available, otherwise rank_m
+  # 880 E2    gap 90.815%                  rank\_mean
+  # 881 E2    gap 9.837%                   Prioritize tasks with the highest execution time variability relative to their expected im
+  # 882 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high chain length while considering the execution time on the specif
+  # 883 M1    gap 5.185%                   Prioritize tasks with high median chain length and favor the earliest possible finish time
+  # 884 M1    gap 9.487%                   Prioritize tasks with high mean chain length, moderately penalized by the average executio
+  # 885 M1    gap 6.758%                   Prioritize tasks with high mean chain length while heavily penalizing later earliest finis
+  # 886 M1    gap 4.718%                   Prioritize tasks with high median chain length, weighted by their minimum execution time, 
+  # 887 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high chain length while favoring execution times closer to the mean 
+  # 888 M1    gap 17.398%                  Prioritize tasks with high mean chain length adjusted by the ratio of execution time on th
+  # 889 M1    gap 128.573%                 Prioritize tasks with high mean chain length while favoring a smaller ratio of execution t
+  # 890 M1    gap 9.663%                   Prioritize tasks with high mean chain length while strongly favoring the earliest possible
+  # 891 M1    gap 130.989%                 Prioritize tasks with high mean chain length, favoring lower execution time on the assigne
+  # 892 M2    gap 4.627%                   Prioritize tasks with high average chain length and utilize the expected finish time (mean
+  # 893 M2    gap 392.656%                 Prioritize tasks with high immediate processing time on fast machines while considering th
+  # 894 M2    gap 137.121%                 Prioritize tasks with the maximum execution time on their best machine, balanced against t
+  # 895 M2    gap 793.295%                 Prioritize tasks with high maximum execution time on their best machine, weighted against 
+  # 896 M2    gap 4.415%                   Prioritize tasks with high minimum chain length, favor the mean execution time, and use th
+  # 897 M2    gap 6.667%                   Prioritize tasks with long chain lengths while favoring execution on the machine that resu
+  # 898 M2    gap 13.450%                  Prioritize tasks with high immediate impact (low execution time) combined with minimizing 
+  # 899 M2    gap 5.049%                   Prioritize tasks with high minimum execution time and early feasible finish time, slightly
+  # 900 M2    gap 6.339%                   Prioritize tasks with high downstream work potential and favor machines that result in the
+  # 901 M2    gap 22.086%                  Prioritize tasks with the earliest possible finish time, while slightly favoring tasks wit
+  # 902 M3    gap 793.295%                 Prioritize tasks with high mean chain length while favoring the minimum execution time wit
+  # 903 M3    gap 4.526%                   Prioritize tasks with high mean chain length and favor the earliest possible finish time w
+  # 904 M3    gap 793.295%                 Prioritize tasks with high average chain length and select the machine that minimizes the 
+  # 905 M3    gap 4.128%                   Prioritize task chain length by mean, then favor minimum execution time, penalizing by the
+  # 906 M3    gap 90.429%                  Prioritize tasks with long mean chain length, favoring lower execution time on the specifi
+  # 907 M3    gap 6.667%                   Prioritize tasks with high mean chain length and favor assignments that lead to an early f
+  # 908 M3    gap 4.932%                   Prioritize tasks with high mean chain length while favoring the earliest possible finish t
+  # 909 M3    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with the longest median chain length, scaled by a factor related to execu
+  # 910 M3    gap 6.667%                   Prioritize tasks by their mean rank and favor the machine that minimizes the estimated fin
+  # 911 M3    gap 1178.090%                Prioritize tasks with high mean chain length while favoring smaller execution times and ea
+== generation 18: best gap 3.876%  |  population 3.88, 3.88, 4.04, 4.06, 4.06, 4.06, 4.13, 4.17, 4.20, 4.20  |  tokens so far 726626
+generation 19
+  # 912 E1    gap 23.009%                  Prioritize tasks based on the ratio of their longest path length to their expected executi
+  # 913 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on their longest path depth and favor machines that offer the best 
+  # 914 E1    gap 793.295%                 Prioritize tasks with high descendant count and shortest execution time relative to the be
+  # 915 E1    gap 47.342%                  Prioritize tasks with high descendant count, favoring machines that minimize the normalize
+  # 916 E1    gap 10.202%                  Prioritize tasks with high descendant count scaled by their mean execution time, while pen
+  # 917 E1    gap 10.181%                  Prioritize tasks with high descendant count weighted by minimum execution time, adjusted b
+  # 918 E1    gap 144.232%                 Prioritize tasks with high processing time variability relative to their critical path ran
+  # 919 E1    gap 133.849%                 Prioritize tasks with high descendant count weighted by their mean rank, favoring the mach
+  # 920 E1    gap 405.050%                 Prioritize tasks with the highest relative execution time on the chosen machine, weighted 
+  # 921 E1    gap 11.425%                  Prioritize tasks with high descendant count and favor the shortest execution time on the c
+  # 922 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high structural importance (descendants/depth) and select the machin
+  # 923 E2    gap 793.295%                 Prioritize tasks based on their potential to extend the critical path using the median cha
+  # 924 E2    gap 5.494%                   Prioritize tasks with high potential overall work (descendants * rank_mean) and strongly f
+  # 925 E2    gap 132.281%                 Prioritize tasks based on their potential contribution to the critical path (using median 
+  # 926 E2    gap 853.178%                 Prioritize tasks with high criticality (based on mean rank) and favor scheduling on machin
+  # 927 E2    FAILED (ZeroDivisionError: division by zero) The new heuristic prioritizes tasks based on their longest path (rank) and strongly reward
+  # 928 E2    gap 405.050%                 Prioritize tasks with high downstream work potential, weighted by the relative execution t
+  # 929 E2    gap 14.689%                  Prioritize tasks with the longest remaining critical path (rank_mean), weighted by the inv
+  # 930 E2    gap 1182.506%                Prioritize tasks with high descendant count and favor shorter execution times relative to 
+  # 931 E2    gap 856.415%                 Prioritize tasks with high descendant count, scale by the minimum execution time, and use 
+  # 932 M1    gap 4.170%                   Prioritize tasks with high mean chain length while balancing execution time against the ea
+  # 933 M1    gap 4.459%                   Prioritize tasks with a balanced measure of critical path length and select the machine th
+  # 934 M1    gap 338.707%                 Prioritize tasks with high median chain length and favor the actual execution time on the 
+  # 935 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high minimum chain length while favoring early finishing on machines
+  # 936 M1    gap 4.057%                   Prioritize tasks with high mean chain length while favoring the shortest execution time on
+  # 937 M1    gap 5.112%                   Prioritize tasks with high median chain length and use the estimated finish time on the ch
+  # 938 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high mean rank while favoring machines that offer a relatively low e
+  # 939 M1    gap 1346.491%                Prioritize tasks with high mean chain length while favoring the earliest possible finish t
+  # 940 M1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high critical path length while favoring shorter execution times, an
+  # 941 M1    gap 5.156%                   Prioritize tasks with high median chain length, favor low execution time relative to the t
+  # 942 M2    gap 20.160%                  Prioritize tasks with high descendant count and choose the machine that minimizes the resu
+  # 943 M2    gap 141.234%                 Prioritize tasks with high urgency (short min time) on machines that offer a good balance 
+  # 944 M2    gap 5.666%                   Prioritize tasks with high minimum chain length and use the average execution time on the 
+  # 945 M2    gap 6.340%                   Prioritize tasks with the longest mean chain length and the earliest feasible finish time,
+  # 946 M2    gap 793.295%                 Prioritize tasks with minimum required processing time on the best available machine, whil
+  # 947 M2    gap 5.113%                   Prioritize tasks with high minimum chain length, heavily rewarding smaller execution times
+  # 948 M2    gap 4.115%                   Prioritize tasks with high mean chain length while favoring lower execution time on the sp
+  # 949 M2    gap 15.911%                  Prioritize tasks with high minimum chain length while strongly favoring the earliest possi
+  # 950 M2    gap 22.086%                  Prioritize tasks with minimum execution time while strongly favoring the earliest possible
+  # 951 M2    gap 6.758%                   Prioritize tasks with high mean chain length and utilize the shortest possible execution t
+  # 952 M3    gap 6.667%                   Prioritize tasks with high longest chain length using the mean time while selecting the ma
+  # 953 M3    gap 6.667%                   Prioritize tasks with high downstream work potential while favoring machines that minimize
+  # 954 M3    gap 6.667%                   Prioritize tasks with high mean chain length and select the machine that minimizes the res
+  # 955 M3    gap 4.968%                   Prioritize tasks with the longest mean chain length, favoring early finish time as the pri
+  # 956 M3    gap 1189.866%                Prioritize tasks with high mean chain length and minimal execution time while ensuring the
+  # 957 M3    gap 5.611%                   Prioritize tasks with high mean chain length and assign them to the machine that yields th
+  # 958 M3    gap 6.893%                   Prioritize tasks with high mean chain length while favoring minimum execution time and ear
+  # 959 M3    gap 6.667%                   Prioritize tasks with high mean chain length and select the machine that minimizes the res
+  # 960 M3    gap 90.916%                  Prioritize tasks by their median chain length while penalizing long execution times on the
+  # 961 M3    gap 6.667%                   Prioritize tasks based on the longest path using mean execution times while favoring the e
+== generation 19: best gap 3.876%  |  population 3.88, 3.88, 4.04, 4.06, 4.06, 4.06, 4.06, 4.12, 4.13, 4.17  |  tokens so far 767336
+generation 20
+  # 962 E1    gap 14.689%                  Prioritize tasks based on their critical path (rank_mean) relative to their potential spee
+  # 963 E1    gap 793.295%                 Prioritize tasks with high overall structural importance (descendants and depth) combined 
+  # 964 E1    gap 138.730%                 Prioritize tasks with high descendant count and minimum execution time on the machine, whi
+  # 965 E1    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on their overall critical path potential (rank_mean) relative to th
+  # 966 E1    gap 94.168%                  Prioritize tasks with the highest potential impact on the makespan, defined by the ratio o
+  # 967 E1    gap 82.597%                  Prioritize tasks with high descendant count and low execution time on the chosen machine, 
+  # 968 E1    gap 19.576%                  Prioritize tasks with high potential impact (descendants) and select the machine that yiel
+  # 969 E1    gap 1239.764%                Prioritize tasks with high descendant count while heavily penalizing variance in execution
+  # 970 E1    gap 99.431%                  Prioritize tasks with high descendant count and low execution time relative to the task's 
+  # 971 E1    gap 99.431%                  Prioritize tasks with high descendant count, favoring machines that minimize the slack tim
+  # 972 E2    gap 200.406%                 Prioritize tasks with high descendant count combined with a normalized inverse of the exec
+  # 973 E2    gap 793.295%                 Prioritize tasks with high normalized chain length relative to their average processing ti
+  # 974 E2    gap 20.532%                  Prioritize tasks based on the criticality (descendants) balanced against the relative exec
+  # 975 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks based on a weighted combination of their overall criticality (descendants
+  # 976 E2    gap 20.382%                  Prioritize tasks based on the ratio of their mean chain length to their minimum execution 
+  # 977 E2    gap 19.300%                  Prioritize tasks with high descendant count combined with a penalty proportional to the ex
+  # 978 E2    gap 21.130%                  Prioritize tasks with high descendant count and short execution time relative to its minim
+  # 979 E2    gap 20.068%                  Prioritize tasks with high task importance (descendants) and select the machine that resul
+  # 980 E2    gap 16.517%                  Prioritize tasks based on their overall work potential (mean rank) while strongly favoring
+  # 981 E2    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with the highest required downstream work (using median rank) and select 
+  # 982 M1    gap 6.739%                   Prioritize tasks with high minimum chain length while rewarding smaller execution times an
+  # 983 M1    gap 4.201%                   Prioritize tasks with high mean chain length while heavily rewarding small execution times
+  # 984 M1    gap 12.966%                  Prioritize tasks with the maximum mean chain length while favoring the earliest finish tim
+  # 985 M1    gap 719.807%                 Prioritize tasks with high median chain length, favor lower execution time relative to min
+  # 986 M1    gap 4.766%                   Prioritize tasks with high mean chain length while rewarding small execution times relativ
+  # 987 M1    gap 793.295%                 Prioritize tasks with high mean chain length while prioritizing execution time on the best
+  # 988 M1    gap 4.057%                   Prioritize tasks with high mean chain length while favoring lower execution time and earli
+  # 989 M1    gap 5.418%                   Prioritize tasks with high median chain length and favor a machine that minimizes the esti
+  # 990 M1    gap 7.616%                   Prioritize tasks with high median chain length and favor machines that result in a lower e
+  # 991 M1    gap 17.941%                  Prioritize tasks with high mean chain length while favoring early finish time, scaled by t
+  # 992 M2    gap 9.049%                   Prioritize tasks with maximum minimum chain length and favor a lower resulting earliest fi
+  # 993 M2    gap 10.253%                  Prioritize tasks with high estimated finish time based on their mean execution time and fa
+  # 994 M2    gap 1218.208%                Prioritize tasks with high minimum execution time and strongly emphasize minimizing the es
+  # 995 M2    gap 793.295%                 Prioritize tasks with high descendant count and minimize the execution time on the chosen 
+  # 996 M2    gap 793.295%                 Prioritize tasks with high mean chain length while minimizing execution time on the fastes
+  # 997 M2    gap 477.550%                 Prioritize tasks with shortest execution times on the assigned machine while considering t
+  # 998 M2    gap 11.588%                  Prioritize tasks with maximum execution time, favor the mean execution time, and use the e
+  # 999 M2    gap 5.113%                   Prioritize tasks with high minimum chain length and strongly reward smaller execution time
+  #1000 M2    gap 14.127%                  Prioritize tasks with the maximum execution time on the best machine while heavily penaliz
+  #1001 M2    gap 1197.184%                Prioritize tasks with long minimum chain length, strongly favor minimum execution time, an
+  #1002 M3    FAILED (ZeroDivisionError: division by zero) Prioritize tasks with high mean chain length while favoring the earliest possible finish t
+  [nvidia] HTTP 503, waiting 10s (attempt 1/30): {"message":"Service is not ready","type":"Service Unavailable","code":503}
+  #1003 M3    gap 415.930%                 Prioritize tasks with high mean chain length and short execution time on the machine, whil
+  #1004 M3    gap 6.667%                   Prioritize tasks with high mean chain length while strongly favoring the earliest possible
+  #1005 M3    gap 4.482%                   Prioritize tasks with high average chain length while favoring the machine that yields the
+  #1006 M3    gap 90.429%                  Prioritize tasks with the longest mean chain length and favor lower execution times on the
+  #1007 M3    gap 4.482%                   Prioritize tasks with high mean chain length while directly minimizing the estimated finis
+  #1008 M3    gap 9.487%                   Prioritize tasks with high mean chain length and lower actual execution time on the curren
+  #1009 M3    gap 793.295%                 Prioritize tasks with high mean chain length and select the machine that minimizes the tas
+  #1010 M3    gap 4.482%                   Prioritize tasks with long mean chain length while favoring the earliest possible finish t
+  #1011 M3    gap 793.295%                 Prioritize tasks with high mean chain length and favor minimum execution time on the chose
+== generation 20: best gap 3.876%  |  population 3.88, 3.88, 4.04, 4.06, 4.06, 4.06, 4.06, 4.12, 4.13, 4.17  |  tokens so far 807993
+
+best heuristic (train gap 3.876%):
+{Prioritize tasks with high average chain length and use the minimum possible execution time on the chosen machine, giving a stronger emphasis on minimizing the estimated finish time by weighting the chain length more heavily.}
+def score(f):
+    return 2.0 * f["rank_mean"] + 1.0 * f["p_min"] - 1.0 * f["eft"]

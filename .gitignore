@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+*.key
+.*_key
+eoh/_cache/
+data/_tgff_tmp/
